@@ -41,52 +41,52 @@ has simple common methods that I tend to use on a day to day basis.
 It exposes the following methods:
 
 
-- insert ( string table, array fields, array options = []): false|string
+- **insert** ( string table, array fields, array options = []): false|string
     Executes the insert statement and returns the lastInsertId.
     See [insert examples](#todo).
 
-- replace ( string table, array fields, array options = []): false|string
+- **replace** ( string table, array fields, array options = []): false|string
     Executes the replace statement and returns the lastInsertId.
     See [replace examples](#todo).
 
-- update ( string table, array fields, string|array whereConds = null, array markers = []): bool
+- **update** ( string table, array fields, string|array whereConds = null, array markers = []): bool
     Executes the update statement and returns whether the statement was executed successfully.
     See [update examples](#todo).
 
-- delete ( string table, array whereConds = [], array markers = []): false|int
+- **delete** ( string table, array whereConds = [], array markers = []): false|int
     Executes the delete statement and returns the number of deleted rows.
     See [delete examples](#todo).
 
-- fetch ( string query, array markers = [], string|phpConst fetchStyle=null ): false|array
+- **fetch** ( string query, array markers = [], string|phpConst fetchStyle=null ): false|array
     Executes the prepared statement and returns the fetched row.
     See [fetch examples](#todo).
 
-- fetchAll ( string query, array markers = [], int fetchStyle=null, mixed fetchArg = null, array ctorArgs = [] ): false|array
+- **fetchAll** ( string query, array markers = [], int fetchStyle=null, mixed fetchArg = null, array ctorArgs = [] ): false|array
     Executes the prepared statement and return an array containing all of the result set rows.
     See [fetchAll examples](#todo).
 
-- executeStatement ( string query ): false|int
+- **executeStatement** ( string query ): false|int
     Executes an SQL statement and returns the number of affected rows.
     See [executeStatement examples](#todo).
 
-- transaction ( callable transactionCallback, \Exception &$e=null ): bool
+- **transaction** ( callable transactionCallback, \Exception &$e=null ): bool
     Executes a transaction, and returns whether it was successful.
     See [transaction examples](#todo).
 
-- setConnection ( \PDO $pdoInstance ): void
+- **setConnection** ( \PDO $pdoInstance ): void
     Sets the pdo instance.
 
-- getConnection (): \PDO
+- **getConnection** (): \PDO
     Returns the current php's \PDO instance.
 
-- getError (): array|null
+- **getError** (): array|null
     Returns the error info of the last statement executed, or null if there was no error.
     Note: the value is reinitialized to null on every method that queries a statement.
 
-- getQuery (): string
+- **getQuery** (): string
     Returns the last query executed.
 
-- setErrorMode ( phpConst errorMode ): void
+- **setErrorMode** ( phpConst errorMode ): void
     Sets the error mode. See [php doc](http://php.net/manual/en/pdo.errorinfo.php) for more info.
 
 

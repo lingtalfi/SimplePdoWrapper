@@ -1,7 +1,7 @@
 <?php
 
 
-namespace SimplePdoWrapper\SimplePdoWrapper;
+namespace SimplePdoWrapper;
 
 
 use SimplePdoWrapper\Exception\NoPdoConnectionException;
