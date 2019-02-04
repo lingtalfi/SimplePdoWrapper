@@ -43,35 +43,35 @@ It exposes the following methods:
 
 - **insert** ( string table, array fields, array options = []): false|string
     Executes the insert statement and returns the lastInsertId.
-    See [insert examples](#todo).
+    See [insert examples](#insert-examples).
 
 - **replace** ( string table, array fields, array options = []): false|string
     Executes the replace statement and returns the lastInsertId.
-    See [replace examples](#todo).
+    See [replace examples](#replace-examples).
 
 - **update** ( string table, array fields, string|array whereConds = null, array markers = []): bool
     Executes the update statement and returns whether the statement was executed successfully.
-    See [update examples](#todo).
+    See [update examples](#update-examples).
 
 - **delete** ( string table, array whereConds = [], array markers = []): false|int
     Executes the delete statement and returns the number of deleted rows.
-    See [delete examples](#todo).
+    See [delete examples](#delete-examples).
 
 - **fetch** ( string query, array markers = [], string|phpConst fetchStyle=null ): false|array
     Executes the prepared statement and returns the fetched row.
-    See [fetch examples](#todo).
+    See [fetch examples](#fetch-examples).
 
 - **fetchAll** ( string query, array markers = [], int fetchStyle=null, mixed fetchArg = null, array ctorArgs = [] ): false|array
     Executes the prepared statement and return an array containing all of the result set rows.
-    See [fetchAll examples](#todo).
+    See [fetchAll examples](#fetch-all-examples).
 
 - **executeStatement** ( string query ): false|int
     Executes an SQL statement and returns the number of affected rows.
-    See [executeStatement examples](#todo).
+    See [executeStatement examples](#execute-statement-examples).
 
 - **transaction** ( callable transactionCallback, \Exception &$e=null ): bool
     Executes a transaction, and returns whether it was successful.
-    See [transaction examples](#todo).
+    See [transaction examples](#transaction-examples).
 
 - **setConnection** ( \PDO $pdoInstance ): void
     Sets the pdo instance.
