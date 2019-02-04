@@ -95,7 +95,7 @@ It exposes the following methods:
 All methods above which execute a sql query behave the same when error handling is concerned:
 
 - If the pdo connection is not defined, a NoPdoConnectionException is thrown.
-- If the query fails, a native **\PDOException** exception is thrown if the error mode is set to exception,
+- If the query fails, a native php **\PDOException** exception is thrown if the error mode is set to exception,
     or false is returned otherwise.
     In both cases, the error info array is accessible via the getError method.
 - For all "query methods" using a table argument (insert, replace, update, delete), the table argument must be
