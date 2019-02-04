@@ -203,9 +203,9 @@ In all the following examples, I will use the following tables:
 Also, the $wrapper variable represents an instance of the simple pdo wrapper instance.
 
 It will be initialized using the **\PDO::ERRMODE_WARNING** error mode (or silent mode would have worked too),
-so that don't have to catch exceptions (which is more verbose and not the point of the examples).
+so that I don't have to catch exceptions (which is more verbose and not the point of the examples).
 
-I will use the mysql version in the examples (MysqlSimplePdoWrapper).
+I will use a mysql dsn in the examples (although it shouldn't make much difference).
 
 
 
