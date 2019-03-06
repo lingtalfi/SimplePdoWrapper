@@ -1,10 +1,10 @@
 <?php
 
 
-namespace SimplePdoWrapper;
+namespace Ling\SimplePdoWrapper;
 
 
-use SimplePdoWrapper\Exception\NoPdoConnectionException;
+use Ling\SimplePdoWrapper\Exception\NoPdoConnectionException;
 
 /**
  * The SimplePdoWrapperInterface is the interface for all SimplePdoWrapper instances.

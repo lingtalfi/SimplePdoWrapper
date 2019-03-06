@@ -8,7 +8,7 @@ SimplePdoWrapper
 A simple wrapper around the php's PDO object.
 
 
-Note: this planet is heavily inspired from the [QuickPdo planet](https://github.com/karayabin/universe-snapshot/tree/master/universe/QuickPdo).
+Note: this planet is heavily inspired from the [QuickPdo planet](https://github.com/karayabin/universe-snapshot/tree/master/universe/Ling/QuickPdo).
 It basically fixes some implementation details I was not happy with.
 
 
@@ -20,7 +20,7 @@ Install
 ==========
 Using the [uni](https://github.com/lingtalfi/universe-naive-importer) command.
 ```bash
-uni import SimplePdoWrapper
+uni import Ling/SimplePdoWrapper
 ```
 
 Or just download it and place it where you want otherwise.

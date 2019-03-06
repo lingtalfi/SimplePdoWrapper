@@ -1,10 +1,10 @@
 <?php
 
 
-namespace SimplePdoWrapper;
+namespace Ling\SimplePdoWrapper;
 
 
-use SimplePdoWrapper\Exception\NoPdoConnectionException;
+use Ling\SimplePdoWrapper\Exception\NoPdoConnectionException;
 
 /**
  * The SimplePdoWrapper is a base class implementing the non-driver-specific methods of the SimplePdoWrapperInterface interface.

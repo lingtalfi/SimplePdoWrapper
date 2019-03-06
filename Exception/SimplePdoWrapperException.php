@@ -1,7 +1,7 @@
 <?php
 
 
-namespace SimplePdoWrapper\Exception;
+namespace Ling\SimplePdoWrapper\Exception;
 
 
 /**
