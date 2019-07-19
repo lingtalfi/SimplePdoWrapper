@@ -772,11 +772,19 @@ a($exception); // object(Exception)#39 ...
 ```
 
 
+Related
+----------
+- [QuickPdo](https://github.com/lingtalfi/QuickPdo), the library used to inspire the SimplePdoWrapper planet
+
 
 
 History Log
 ------------------
 
+- 1.0.1 -- 2019-07-19
+
+    - update documentation, add related section
+    
 - 1.0.0 -- 2019-02-04
 
     - initial commit
