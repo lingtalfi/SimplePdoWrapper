@@ -781,6 +781,10 @@ Related
 History Log
 ------------------
 
+- 1.0.3 -- 2019-07-22
+
+    - update documentation typo 
+
 - 1.0.2 -- 2019-07-22
 
     - update documentation to be compliant with docTools

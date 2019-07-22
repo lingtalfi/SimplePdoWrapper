@@ -232,7 +232,7 @@ interface SimplePdoWrapperInterface
      * Note: the value is reinitialized to null on every method that queries a statement.
      *
      *
-     * @return null|array (http://php.net/manual/en/pdo.errorinfo.php)
+     * @return null|array. The pdo error info objects (http://php.net/manual/en/pdo.errorinfo.php)
      *      - 0: SQLSTATE error code (5 chars alphanumeric)
      *      - 1: Driver specific error code
      *      - 2: Driver specific error message
