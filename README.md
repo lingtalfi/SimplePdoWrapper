@@ -781,6 +781,10 @@ Related
 History Log
 ------------------
 
+- 1.1.0 -- 2019-07-22
+
+    - add MysqlInfoUtil 
+    
 - 1.0.3 -- 2019-07-22
 
     - update documentation typo 
