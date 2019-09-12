@@ -819,6 +819,10 @@ Related
 History Log
 ------------------
 
+- 1.7.0 -- 2019-09-12
+
+    - added MysqlInfoUtil->getColumnTypes method 
+    
 - 1.6.0 -- 2019-09-12
 
     - added MysqlInfoUtil->getUniqueIndexes method 

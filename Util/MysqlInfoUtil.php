@@ -208,7 +208,7 @@ EEE;
         $ric = $this->getPrimaryKey($table, true, $hasPrimary);
         if (false === $hasPrimary) {
             $uniqueIndexes = $this->getUniqueIndexes($table);
-            if($uniqueIndexes){
+            if ($uniqueIndexes) {
                 $ric = current($uniqueIndexes);
             }
         }
@@ -246,6 +246,36 @@ EEE;
         }
         return $ret;
     }
+
+
+    /**
+     * Returns an array of columnName => type.
+     *
+     * The type is the string returned by mysql (such as int(11) or varchar(128) for instance).
+     * If the precision tag is set to false, then the information in parenthesis is dropped.
+     *
+     *
+     *
+     * @param string $table
+     * @param bool $precision
+     * @return array
+     * @throws \Exception
+     */
+    public function getColumnTypes(string $table, bool $precision = false)
+    {
+        $types = [];
+        $info = $this->wrapper->fetchAll("SHOW COLUMNS FROM `$table`");
+
+        foreach ($info as $_info) {
+            $type = $_info['Type'];
+            if (false === $precision) {
+                $type = explode('(', $type, 2)[0];
+            }
+            $types[$_info['Field']] = $type;
+        }
+        return $types;
+    }
+
 
 
     //--------------------------------------------
