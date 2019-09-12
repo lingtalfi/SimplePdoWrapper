@@ -58,7 +58,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [SimplePdoWrapper::addWhereSubStmt](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/SimplePdoWrapper.php#L380-L411)
+See the source code for method [SimplePdoWrapper::addWhereSubStmt](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/SimplePdoWrapper.php#L387-L418)
 
 
 See Also

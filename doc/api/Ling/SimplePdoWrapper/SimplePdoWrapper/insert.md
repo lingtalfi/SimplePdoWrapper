@@ -65,7 +65,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [SimplePdoWrapper::insert](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/SimplePdoWrapper.php#L156-L176)
+See the source code for method [SimplePdoWrapper::insert](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/SimplePdoWrapper.php#L163-L183)
 
 
 See Also
@@ -73,5 +73,5 @@ See Also
 
 The [SimplePdoWrapper](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapper.md) class.
 
-Previous method: [transaction](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapper/transaction.md)<br>Next method: [replace](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapper/replace.md)<br>
+Previous method: [changeDatabase](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapper/changeDatabase.md)<br>Next method: [replace](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapper/replace.md)<br>
 

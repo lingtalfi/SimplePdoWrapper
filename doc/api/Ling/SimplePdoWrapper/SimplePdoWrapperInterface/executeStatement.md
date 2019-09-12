@@ -51,7 +51,7 @@ Returns false | int.
 
 Source Code
 ===========
-See the source code for method [SimplePdoWrapperInterface::executeStatement](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/SimplePdoWrapperInterface.php#L178-L178)
+See the source code for method [SimplePdoWrapperInterface::executeStatement](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/SimplePdoWrapperInterface.php#L188-L188)
 
 
 See Also

@@ -4,7 +4,7 @@
 
 The SimplePdoWrapperInterface class
 ================
-2019-07-22 --> 2019-07-22
+2019-07-22 --> 2019-09-12
 
 
 
@@ -66,6 +66,7 @@ Class synopsis
 abstract class <span class="pl-k">SimplePdoWrapperInterface</span>  {
 
 - Methods
+    - abstract public [changeDatabase](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapperInterface/changeDatabase.md)(string $database) : void
     - abstract public [insert](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapperInterface/insert.md)(?$table, array $fields = [], array $options = []) : false | string
     - abstract public [replace](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapperInterface/replace.md)(?$table, array $fields = [], array $options = []) : false | string
     - abstract public [update](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapperInterface/update.md)(?$table, array $fields, $whereConds = null, array $markers = []) : bool
@@ -89,6 +90,7 @@ abstract class <span class="pl-k">SimplePdoWrapperInterface</span>  {
 Methods
 ==============
 
+- [SimplePdoWrapperInterface::changeDatabase](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapperInterface/changeDatabase.md) &ndash; Changes the default database to the given value.
 - [SimplePdoWrapperInterface::insert](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapperInterface/insert.md) &ndash; Executes the insert statement and returns the lastInsertId.
 - [SimplePdoWrapperInterface::replace](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapperInterface/replace.md) &ndash; Executes the replace statement and returns the lastInsertId.
 - [SimplePdoWrapperInterface::update](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapperInterface/update.md) &ndash; Executes the update statement and returns whether the statement was executed successfully.

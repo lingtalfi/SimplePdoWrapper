@@ -1,6 +1,6 @@
 SimplePdoWrapper
 ================
-2019-02-04
+2019-02-04 -> 2019-09-12
 
 
 
@@ -819,6 +819,10 @@ Related
 History Log
 ------------------
 
+- 1.2.0 -- 2019-09-12
+
+    - add SimplePdoWrapperInterface->changeDatabase method 
+    
 - 1.1.1 -- 2019-07-22
 
     - add doc summary 

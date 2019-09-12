@@ -148,6 +148,13 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
     //--------------------------------------------
     // BASE METHODS
     //--------------------------------------------
+    /**
+     * @implementation
+     */
+    public function changeDatabase(string $database)
+    {
+        $this->executeStatement("use `$database`;");
+    }
 
 
     /**

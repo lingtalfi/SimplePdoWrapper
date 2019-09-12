@@ -4,7 +4,7 @@
 
 The SimplePdoWrapper class
 ================
-2019-07-22 --> 2019-07-22
+2019-07-22 --> 2019-09-12
 
 
 
@@ -38,6 +38,7 @@ class <span class="pl-k">SimplePdoWrapper</span> implements [SimplePdoWrapperInt
     - public [setErrorMode](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapper/setErrorMode.md)(?$errorMode) : mixed
     - public [getError](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapper/getError.md)() : null | array
     - public [transaction](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapper/transaction.md)(callable $transactionCallback, [\Exception](http://php.net/manual/en/class.exception.php) &$e = null) : bool
+    - public [changeDatabase](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapper/changeDatabase.md)(string $database) : void
     - public [insert](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapper/insert.md)(?$table, array $fields = [], array $options = []) : false | string
     - public [replace](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapper/replace.md)(?$table, array $fields = [], array $options = []) : false | string
     - public [update](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapper/update.md)(?$table, array $fields, $whereConds = null, array $markers = []) : bool
@@ -101,6 +102,7 @@ Methods
 - [SimplePdoWrapper::setErrorMode](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapper/setErrorMode.md) &ndash; Sets the error mode.
 - [SimplePdoWrapper::getError](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapper/getError.md) &ndash; Returns the error info of the last statement executed, or null if there was no error.
 - [SimplePdoWrapper::transaction](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapper/transaction.md) &ndash; Executes a transaction, and returns whether it was successful.
+- [SimplePdoWrapper::changeDatabase](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapper/changeDatabase.md) &ndash; Changes the default database to the given value.
 - [SimplePdoWrapper::insert](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapper/insert.md) &ndash; Executes the insert statement and returns the lastInsertId.
 - [SimplePdoWrapper::replace](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapper/replace.md) &ndash; Executes the replace statement and returns the lastInsertId.
 - [SimplePdoWrapper::update](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapper/update.md) &ndash; Executes the update statement and returns whether the statement was executed successfully.
