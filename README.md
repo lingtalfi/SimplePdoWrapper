@@ -819,6 +819,11 @@ Related
 History Log
 ------------------
 
+- 1.6.0 -- 2019-09-12
+
+    - added MysqlInfoUtil->getUniqueIndexes method 
+    - fixed MysqlInfoUtil->getRic not taking into account unique indexes 
+
 - 1.5.0 -- 2019-09-12
 
     - added MysqlInfoUtil->getRic method 

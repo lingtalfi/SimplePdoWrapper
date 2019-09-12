@@ -196,13 +196,7 @@ EEE;
 
 
     /**
-     * Returns the ric array for the given table.
-     * The ric array is the array of the column names that uniquely identifies any row.
-     *
-     * It's the primary key array if the table has a primary key,
-     * or it's all the columns of the table if the table doesn't have a primary key.
-     *
-     * Ps: ric stands for row identifying columns.
+     * Returns the @page(ric) array for the given table.
      *
      * @param string $table
      * @return array
@@ -210,7 +204,47 @@ EEE;
      */
     public function getRic(string $table): array
     {
-        return $this->getPrimaryKey($table, true);
+        $hasPrimary = false;
+        $ric = $this->getPrimaryKey($table, true, $hasPrimary);
+        if (false === $hasPrimary) {
+            $uniqueIndexes = $this->getUniqueIndexes($table);
+            if($uniqueIndexes){
+                $ric = current($uniqueIndexes);
+            }
+        }
+        return $ric;
+    }
+
+    /**
+     * Returns the array of unique indexes for the given table.
+     * It's an aray of indexName => indexes
+     * With indexes being an array of column names ordered by ascending index sequence.
+     *
+     * @param string $table
+     *
+     * @return array
+     * @throws \Exception
+     */
+    public function getUniqueIndexes(string $table): array
+    {
+        $ret = [];
+        $info = $this->wrapper->fetchAll("SHOW INDEX FROM `$table`");
+        if (false !== $info) {
+            $indexes = [];
+            foreach ($info as $_info) {
+                if (
+                    '0' === $_info['Non_unique'] &&
+                    'PRIMARY' !== $_info['Key_name']
+                ) {
+                    $indexes[$_info['Key_name']][$_info['Seq_in_index']] = $_info['Column_name'];
+                }
+            }
+            foreach ($indexes as $name => $keys) {
+                $keys = array_merge($keys);
+                $ret[$name] = $keys;
+            };
+        }
+        return $ret;
     }
 
 

@@ -7,7 +7,7 @@ MysqlInfoUtil::getRic
 
 
 
-MysqlInfoUtil::getRic — Returns the ric array for the given table.
+MysqlInfoUtil::getRic — Returns the [ric](https://github.com/lingtalfi/NotationFan/blob/master/ric.md) array for the given table.
 
 
 
@@ -21,13 +21,7 @@ public [MysqlInfoUtil::getRic](https://github.com/lingtalfi/SimplePdoWrapper/blo
 
 
 
-Returns the ric array for the given table.
-The ric array is the array of the column names that uniquely identifies any row.
-
-It's the primary key array if the table has a primary key,
-or it's all the columns of the table if the table doesn't have a primary key.
-
-Ps: ric stands for row identifying columns.
+Returns the [ric](https://github.com/lingtalfi/NotationFan/blob/master/ric.md) array for the given table.
 
 
 
@@ -60,7 +54,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [MysqlInfoUtil::getRic](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/MysqlInfoUtil.php#L211-L214)
+See the source code for method [MysqlInfoUtil::getRic](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/MysqlInfoUtil.php#L205-L216)
 
 
 See Also
@@ -68,5 +62,5 @@ See Also
 
 The [MysqlInfoUtil](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/MysqlInfoUtil.md) class.
 
-Previous method: [getPrimaryKey](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/MysqlInfoUtil/getPrimaryKey.md)<br>Next method: [dQuoteTable](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/MysqlInfoUtil/dQuoteTable.md)<br>
+Previous method: [getPrimaryKey](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/MysqlInfoUtil/getPrimaryKey.md)<br>Next method: [getUniqueIndexes](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/MysqlInfoUtil/getUniqueIndexes.md)<br>
 
