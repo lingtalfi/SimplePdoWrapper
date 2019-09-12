@@ -151,15 +151,6 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
     /**
      * @implementation
      */
-    public function changeDatabase(string $database)
-    {
-        $this->executeStatement("use `$database`;");
-    }
-
-
-    /**
-     * @implementation
-     */
     public function insert($table, array $fields = [], array $options = [])
     {
         // preparing the query

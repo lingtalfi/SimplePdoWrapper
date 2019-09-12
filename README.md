@@ -819,6 +819,10 @@ Related
 History Log
 ------------------
 
+- 1.2.1 -- 2019-09-12
+
+    - removed SimplePdoWrapperInterface->changeDatabase method, as it's already in MysqlInfoUtil 
+
 - 1.2.0 -- 2019-09-12
 
     - add SimplePdoWrapperInterface->changeDatabase method 

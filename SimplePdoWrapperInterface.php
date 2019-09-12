@@ -59,16 +59,6 @@ use Ling\SimplePdoWrapper\Exception\NoPdoConnectionException;
 interface SimplePdoWrapperInterface
 {
 
-
-    /**
-     * Changes the default database to the given value.
-     *
-     * @param string $database
-     * @return void
-     */
-    public function changeDatabase(string $database);
-
-
     /**
      * Executes the insert statement and returns the lastInsertId.
      * See more info in the class description.

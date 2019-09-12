@@ -50,7 +50,7 @@ class MysqlInfoUtil
      */
     public function changeDatabase(string $database)
     {
-        $this->wrapper->executeStatement("use $database;");
+        $this->wrapper->executeStatement("use `$database`;");
     }
 
 

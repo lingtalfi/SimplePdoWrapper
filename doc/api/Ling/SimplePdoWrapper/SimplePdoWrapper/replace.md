@@ -68,7 +68,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [SimplePdoWrapper::replace](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/SimplePdoWrapper.php#L189-L214)
+See the source code for method [SimplePdoWrapper::replace](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/SimplePdoWrapper.php#L180-L205)
 
 
 See Also
