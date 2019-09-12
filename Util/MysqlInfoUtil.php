@@ -142,6 +142,23 @@ EEE;
     }
 
 
+    /**
+     * Get the columns for the given table of the current database.
+     *
+     * @param string $table
+     * @return array
+     * @throws \Exception
+     */
+    public function getColumnNames(string $table): array
+    {
+        $ret = [];
+        $cols = $this->wrapper->fetchAll("describe `$table`;");
+        foreach ($cols as $col) {
+            $ret[] = $col['Field'];
+        }
+        return $ret;
+    }
+
 
     //--------------------------------------------
     //
