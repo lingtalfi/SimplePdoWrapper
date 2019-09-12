@@ -276,7 +276,22 @@ EEE;
         return $types;
     }
 
-
+    /**
+     * Return the name of the auto-incremented field, or false if there is none.
+     *
+     * @return false|string
+     * @throws \Exception
+     */
+    public function getAutoIncrementedKey(string $table)
+    {
+        $q = "show columns from `$table` where extra='auto_increment'";
+        if (false !== ($rows = $this->wrapper->fetchAll($q))) {
+            if (array_key_exists(0, $rows)) {
+                return $rows[0]['Field'];
+            }
+        }
+        return false;
+    }
 
     //--------------------------------------------
     //

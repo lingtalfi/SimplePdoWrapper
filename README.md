@@ -819,6 +819,10 @@ Related
 History Log
 ------------------
 
+- 1.8.0 -- 2019-09-12
+
+    - added MysqlInfoUtil->getAutoIncrementedKey method 
+    
 - 1.7.0 -- 2019-09-12
 
     - added MysqlInfoUtil->getColumnTypes method 
