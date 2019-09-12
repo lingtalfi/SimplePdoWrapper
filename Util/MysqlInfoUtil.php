@@ -160,6 +160,41 @@ EEE;
     }
 
 
+    /**
+     * Returns the array of columns composing the primary key.
+     * If there is no primary key:
+     * - it returns an empty array if the $returnAllIfEmpty is set to false (default)
+     * - it returns all the columns of the table if the $returnAllIfEmpty is set to true
+     *
+     * The flag $hasPrimaryKey is set to whether the table has a primary key.
+     *
+     *
+     *
+     * @param string $table
+     * @param bool $returnAllIfEmpty
+     * @param bool $hasPrimaryKey
+     * @return array
+     * @throws  \Exception
+     */
+    public function getPrimaryKey(string $table, bool $returnAllIfEmpty = false, bool &$hasPrimaryKey = true): array
+    {
+        $rows = $this->wrapper->fetchAll("SHOW INDEX FROM `$table` WHERE Key_name = 'PRIMARY'");
+        $ret = [];
+        if (false !== $rows) {
+            foreach ($rows as $info) {
+                $ret[] = $info['Column_name'];
+            }
+        }
+        if (true === $returnAllIfEmpty && 0 === count($ret)) {
+            $hasPrimaryKey = false;
+            $ret = $this->getColumnNames($table);
+        } else {
+            $hasPrimaryKey = true;
+        }
+        return $ret;
+    }
+
+
     //--------------------------------------------
     //
     //--------------------------------------------

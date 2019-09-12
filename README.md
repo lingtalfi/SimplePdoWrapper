@@ -819,6 +819,10 @@ Related
 History Log
 ------------------
 
+- 1.4.0 -- 2019-09-12
+
+    - added MysqlInfoUtil->getPrimaryKey method 
+    
 - 1.3.0 -- 2019-09-12
 
     - added MysqlInfoUtil->getColumnNames method 
