@@ -195,6 +195,25 @@ EEE;
     }
 
 
+    /**
+     * Returns the ric array for the given table.
+     * The ric array is the array of the column names that uniquely identifies any row.
+     *
+     * It's the primary key array if the table has a primary key,
+     * or it's all the columns of the table if the table doesn't have a primary key.
+     *
+     * Ps: ric stands for row identifying columns.
+     *
+     * @param string $table
+     * @return array
+     * @throws \Exception
+     */
+    public function getRic(string $table): array
+    {
+        return $this->getPrimaryKey($table, true);
+    }
+
+
     //--------------------------------------------
     //
     //--------------------------------------------

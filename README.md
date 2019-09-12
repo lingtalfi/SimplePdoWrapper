@@ -819,6 +819,10 @@ Related
 History Log
 ------------------
 
+- 1.5.0 -- 2019-09-12
+
+    - added MysqlInfoUtil->getRic method 
+    
 - 1.4.0 -- 2019-09-12
 
     - added MysqlInfoUtil->getPrimaryKey method 
