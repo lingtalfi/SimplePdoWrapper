@@ -645,7 +645,7 @@ The key is always the leftmost member of the query.
 Return a simple map of unique id => label
 
 
-    $rows = $wrapper->fetchAll("select id, label from layout", [], \PDO::FETCH_COLUMN | PDO::FETCH_UNIQUE);
+    $rows = $wrapper->fetchAll("select id, label from layout", [], \PDO::FETCH_COLUMN | \PDO::FETCH_UNIQUE);
     a($rows); // contains the array of label
     /**
      * array(20) {
@@ -666,7 +666,7 @@ Return a simple map of unique id => label
 Return a simple map of unique label => id
 
 ```php
-$rows = $wrapper->fetchAll("select label, id from layout", [], \PDO::FETCH_COLUMN | PDO::FETCH_UNIQUE);
+$rows = $wrapper->fetchAll("select label, id from layout", [], \PDO::FETCH_COLUMN | \PDO::FETCH_UNIQUE);
 a($rows); // contains the array of label
 /**
  * array(20) {
@@ -819,6 +819,10 @@ Related
 History Log
 ------------------
 
+- 1.8.1 -- 2019-09-18
+
+    - fix README.md examples typos 
+    
 - 1.8.0 -- 2019-09-12
 
     - added MysqlInfoUtil->getAutoIncrementedKey method 
