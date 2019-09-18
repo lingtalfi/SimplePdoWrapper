@@ -61,6 +61,7 @@ Summary
      * [Select the database](#select-the-database)
      * [execute a file of sql statements](#execute-a-file-of-sql-statements)
   * [Transaction examples](#transaction-examples)
+     * [transaction template](#transaction-template)
      * [successful transaction](#successful-transaction)
      * [transaction with rollback](#transaction-with-rollback)
   * [Related](#related)
@@ -758,6 +759,24 @@ $res = $wrapper->executeStatement($content); // will execute all the statements 
 Transaction examples
 --------------------
 
+### transaction template
+
+
+```php
+/
+**
+ * @var $exception \Exception
+ */
+$exception = null;
+$res = $this->pdoWrapper->transaction(function () {
+    // your code here
+}, $exception);
+if (false === $res) {
+    throw $exception;
+}
+
+```
+
 ### successful transaction
 
 ```php
@@ -819,6 +838,10 @@ Related
 History Log
 ------------------
 
+- 1.8.2 -- 2019-09-18
+
+    - add README.md transaction template example 
+    
 - 1.8.1 -- 2019-09-18
 
     - fix README.md examples typos 
