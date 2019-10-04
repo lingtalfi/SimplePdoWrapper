@@ -838,6 +838,10 @@ Related
 History Log
 ------------------
 
+- 1.8.3 -- 2019-10-04
+
+    - SimplePdoWrapper::addWhereSubStmt is now public 
+    
 - 1.8.2 -- 2019-09-18
 
     - add README.md transaction template example 

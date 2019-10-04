@@ -279,6 +279,7 @@ EEE;
     /**
      * Return the name of the auto-incremented field, or false if there is none.
      *
+     * @param string $table
      * @return false|string
      * @throws \Exception
      */
