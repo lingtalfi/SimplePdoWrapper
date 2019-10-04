@@ -838,6 +838,10 @@ Related
 History Log
 ------------------
 
+- 1.8.4 -- 2019-10-04
+
+    - fix MysqlInfoUtil->getRic not returning all columns when no primary key and no unique indexes 
+    
 - 1.8.3 -- 2019-10-04
 
     - SimplePdoWrapper::addWhereSubStmt is now public 
