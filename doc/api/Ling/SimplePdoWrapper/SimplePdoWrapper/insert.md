@@ -16,13 +16,15 @@ Description
 ================
 
 
-public [SimplePdoWrapper::insert](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapper/insert.md)(?$table, array $fields = [], array $options = []) : false | string
+public [SimplePdoWrapper::insert](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapper/insert.md)($table, ?array $fields = [], ?array $options = []) : false | string
 
 
 
 
 Executes the insert statement and returns the lastInsertId.
 See more info in the class description.
+
+Options: not used at the moment.
 
 
 

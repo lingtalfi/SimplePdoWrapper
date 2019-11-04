@@ -16,7 +16,7 @@ Description
 ================
 
 
-public [SimplePdoWrapper::delete](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapper/delete.md)(?$table, $whereConds = null, $markers = []) : mixed
+public [SimplePdoWrapper::delete](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapper/delete.md)($table, ?$whereConds = null, ?$markers = []) : mixed
 
 
 

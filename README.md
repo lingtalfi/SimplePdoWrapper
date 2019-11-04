@@ -838,6 +838,10 @@ Related
 History Log
 ------------------
 
+- 1.8.5 -- 2019-11-04
+
+    - update MysqlInfoUtil->getRic, now accepts a useStrict argument 
+    
 - 1.8.4 -- 2019-10-04
 
     - fix MysqlInfoUtil->getRic not returning all columns when no primary key and no unique indexes 

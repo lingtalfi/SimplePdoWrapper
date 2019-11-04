@@ -16,7 +16,7 @@ Description
 ================
 
 
-public [SimplePdoWrapper::replace](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapper/replace.md)(?$table, array $fields = [], array $options = []) : false | string
+public [SimplePdoWrapper::replace](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapper/replace.md)($table, ?array $fields = [], ?array $options = []) : false | string
 
 
 

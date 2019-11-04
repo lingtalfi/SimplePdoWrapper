@@ -199,20 +199,25 @@ EEE;
      * Returns the @page(ric) array for the given table.
      *
      * @param string $table
+     * @param bool $useStrictRic
      * @return array
      * @throws \Exception
      */
-    public function getRic(string $table): array
+    public function getRic(string $table, bool $useStrictRic = false): array
     {
         $hasPrimary = false;
         $ric = $this->getPrimaryKey($table, true, $hasPrimary);
         if (false === $hasPrimary) {
-            $uniqueIndexes = $this->getUniqueIndexes($table);
-            if ($uniqueIndexes) {
-                $ric = current($uniqueIndexes);
-            }
-            else{
+
+            if (true === $useStrictRic) {
                 $ric = $this->getColumnNames($table);
+            } else {
+                $uniqueIndexes = $this->getUniqueIndexes($table);
+                if ($uniqueIndexes) {
+                    $ric = current($uniqueIndexes);
+                } else {
+                    $ric = $this->getColumnNames($table);
+                }
             }
         }
         return $ric;
