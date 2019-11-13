@@ -4,10 +4,13 @@
 namespace Ling\SimplePdoWrapper\Util;
 
 
+use Ling\SimplePdoWrapper\Exception\SimplePdoWrapperException;
 use Ling\SimplePdoWrapper\SimplePdoWrapperInterface;
 
 /**
  * The MysqlInfoUtil class.
+ * Inspired from my older @page(QuickPdoInfoTool).
+ *
  */
 class MysqlInfoUtil
 {
@@ -285,7 +288,7 @@ EEE;
     }
 
     /**
-     * Return the name of the auto-incremented field, or false if there is none.
+     * Returns the name of the auto-incremented field, or false if there is none.
      *
      * @param string $table
      * @return false|string
@@ -301,6 +304,66 @@ EEE;
         }
         return false;
     }
+
+
+    /**
+     * Returns an array of
+     *
+     *  foreignKey => [ referencedDb, referencedTable, referencedColumn ]
+     *
+     * @param string $table
+     * @return array
+     * @throws \Exception
+     */
+    public function getForeignKeysInfo(string $table)
+    {
+        $ret = [];
+        $schema = null;
+        $p = explode('.', $table, 2);
+        if (2 === count($p)) {
+            list($schema, $table) = $p;
+        }
+        if (null === $schema) {
+            $schema = $this->getDatabase();
+        }
+
+        if (false !== ($rows = $this->wrapper->fetchAll("
+select 
+COLUMN_NAME,
+REFERENCED_TABLE_SCHEMA, 
+REFERENCED_TABLE_NAME,
+REFERENCED_COLUMN_NAME
+ 
+from information_schema.KEY_COLUMN_USAGE k 
+inner join information_schema.TABLE_CONSTRAINTS t on t.CONSTRAINT_NAME=k.CONSTRAINT_NAME
+where k.TABLE_SCHEMA = '$schema'
+and k.TABLE_NAME = '$table'
+and CONSTRAINT_TYPE = 'FOREIGN KEY'
+"))
+        ) {
+            foreach ($rows as $row) {
+                $ret[$row['COLUMN_NAME']] = [$row['REFERENCED_TABLE_SCHEMA'], $row['REFERENCED_TABLE_NAME'], $row['REFERENCED_COLUMN_NAME']];
+            }
+        }
+
+
+//        if (true === $resolve) {
+//            foreach ($ret as $col => $info) {
+//                $db = $info[0];
+//                $table = $info[1];
+//                $column = $info[2];
+//                $this->getResolvedForeignKeyInfo($db, $table, $column);
+//                $ret[$col] = [
+//                    $db,
+//                    $table,
+//                    $column,
+//                ];
+//            }
+//        }
+
+        return $ret;
+    }
+
 
     //--------------------------------------------
     //
@@ -318,4 +381,22 @@ EEE;
         $table = '`' . $table . '`';
         return $table;
     }
+
+//    protected function getResolvedForeignKeyInfo(&$db = null, &$table = null, &$column = null)
+//    {
+//        $foreignKeys = $this->getForeignKeysInfo($table, $db);
+//        $max = 10;
+//        $c = 0;
+//        while (array_key_exists($column, $foreignKeys)) {
+//            if ($c > $max) {
+//                throw new SimplePdoWrapperException("Too much occurence");
+//            }
+//            $info = $foreignKeys[$column];
+//            $db = $info[0];
+//            $table = $info[1];
+//            $column = $info[2];
+//            $foreignKeys = $this->getForeignKeysInfo($table, $db);
+//            $c++;
+//        }
+//    }
 }

@@ -838,6 +838,10 @@ Related
 History Log
 ------------------
 
+- 1.9.0 -- 2019-11-13
+
+    - add MysqlInfoUtil->getForeignKeysInfo 
+    
 - 1.8.5 -- 2019-11-04
 
     - update MysqlInfoUtil->getRic, now accepts a useStrict argument 
