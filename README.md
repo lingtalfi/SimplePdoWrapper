@@ -1,6 +1,6 @@
 SimplePdoWrapper
 ================
-2019-02-04 -> 2019-09-12
+2019-02-04 -> 2019-12-02
 
 
 
@@ -562,7 +562,6 @@ a($wrapper->getError()); // null
 Using markers:
 
 
-###
 
 ```php
 $rows = $wrapper->fetchAll("select * from layout where id < :id", [
@@ -588,6 +587,19 @@ a($rows);
  */
 a($wrapper->getError()); // null
 ```
+
+
+An example with like:
+
+```php
+
+$rows = $wrapper->fetchAll("select * from layout where name like :name", [
+    'name' => '%' . addcslashes($name, '%_') . '%', 
+]);
+a($rows);
+```
+
+
 
 
 ### Fetch all, single column
@@ -838,6 +850,10 @@ Related
 History Log
 ------------------
 
+- 1.9.1 -- 2019-12-02
+
+    - add documentation example with like  
+    
 - 1.9.0 -- 2019-11-13
 
     - add MysqlInfoUtil->getForeignKeysInfo 
