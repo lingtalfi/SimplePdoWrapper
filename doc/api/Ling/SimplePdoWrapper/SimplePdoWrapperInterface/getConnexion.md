@@ -51,7 +51,7 @@ When the connexion is not set
 
 Source Code
 ===========
-See the source code for method [SimplePdoWrapperInterface::getConnexion](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/SimplePdoWrapperInterface.php#L213-L213)
+See the source code for method [SimplePdoWrapperInterface::getConnexion](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/SimplePdoWrapperInterface.php#L215-L215)
 
 
 See Also

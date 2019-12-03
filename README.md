@@ -850,6 +850,10 @@ Related
 History Log
 ------------------
 
+- 1.9.2 -- 2019-12-03
+
+    - update SimplePdoWrapperInterface, add note about replace  
+    
 - 1.9.1 -- 2019-12-02
 
     - add documentation example with like  

@@ -23,6 +23,8 @@ abstract public [SimplePdoWrapperInterface::replace](https://github.com/lingtalf
 
 Executes the replace statement and returns the lastInsertId.
 
+Note that **replace** is a mysql extension of the sql standard.
+
 Note: at least in mysql a replace statement always create a new record,
 and potentially delete the old record (based on primary key or unique index detection)
 if it gets in the way.
@@ -68,7 +70,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [SimplePdoWrapperInterface::replace](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/SimplePdoWrapperInterface.php#L95-L95)
+See the source code for method [SimplePdoWrapperInterface::replace](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/SimplePdoWrapperInterface.php#L97-L97)
 
 
 See Also

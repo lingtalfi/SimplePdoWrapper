@@ -79,6 +79,8 @@ interface SimplePdoWrapperInterface
     /**
      * Executes the replace statement and returns the lastInsertId.
      *
+     * Note that **replace** is a mysql extension of the sql standard.
+     *
      * Note: at least in mysql a replace statement always create a new record,
      * and potentially delete the old record (based on primary key or unique index detection)
      * if it gets in the way.
