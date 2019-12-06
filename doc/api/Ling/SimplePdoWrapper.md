@@ -58,5 +58,8 @@ Table of contents
     - [RicHelper::getWhereByRics](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/RicHelper/getWhereByRics.md) &ndash; Returns the where part of an sql query (where keyword excluded) based on the given rics.
 
 
+Dependencies
+============
+- [Bat](https://github.com/lingtalfi/Bat)
 
 

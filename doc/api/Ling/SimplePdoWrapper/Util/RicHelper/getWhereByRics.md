@@ -65,6 +65,11 @@ Return values
 Returns string.
 
 
+Exceptions thrown
+================
+
+- [Exception](http://php.net/manual/en/class.exception.php).&nbsp;
+
 
 
 
@@ -73,7 +78,7 @@ Returns string.
 
 Source Code
 ===========
-See the source code for method [RicHelper::getWhereByRics](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/RicHelper.php#L39-L70)
+See the source code for method [RicHelper::getWhereByRics](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/RicHelper.php#L42-L84)
 
 
 See Also

@@ -850,6 +850,10 @@ Related
 History Log
 ------------------
 
+- 1.10.1 -- 2019-12-06
+
+    - fix RicHelper::getWhereByRics low security bug   
+    
 - 1.10.0 -- 2019-12-06
 
     - add RicHelper   

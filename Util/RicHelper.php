@@ -3,6 +3,8 @@
 
 namespace Ling\SimplePdoWrapper\Util;
 
+use Ling\Bat\ArrayTool;
+
 /**
  * The RicHelper class.
  */
@@ -35,6 +37,7 @@ class RicHelper
      * @param array $userRics
      * @param array $markers
      * @return string
+     * @throws \Exception
      */
     public static function getWhereByRics(array $ricColumns, array $userRics, array &$markers): string
     {
@@ -44,6 +47,17 @@ class RicHelper
             $s .= '(';
             $c = 0;
             foreach ($userRics as $userRic) {
+
+                /**
+                 * Ensure that all the ric columns are provided by the user.
+                 * Avoids problems like:
+                 * - delete * from table where user_id=5
+                 * instead of
+                 * - delete * from table where user_id=5 and permission_group_id=9
+                 *
+                 */
+                ArrayTool::arrayKeyExistAll($ricColumns, $userRic, true);
+
                 if (0 !== $c) {
                     $s .= ' or ';
                 }
