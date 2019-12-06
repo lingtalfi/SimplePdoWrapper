@@ -850,6 +850,10 @@ Related
 History Log
 ------------------
 
+- 1.10.0 -- 2019-12-06
+
+    - add RicHelper   
+    
 - 1.9.2 -- 2019-12-03
 
     - update SimplePdoWrapperInterface, add note about replace  

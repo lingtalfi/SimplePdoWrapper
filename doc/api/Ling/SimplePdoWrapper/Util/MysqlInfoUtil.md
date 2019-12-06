@@ -4,7 +4,7 @@
 
 The MysqlInfoUtil class
 ================
-2019-07-22 --> 2019-12-03
+2019-07-22 --> 2019-12-06
 
 
 
@@ -93,4 +93,4 @@ See the source code of [Ling\SimplePdoWrapper\Util\MysqlInfoUtil](https://github
 
 SeeAlso
 ==============
-Previous class: [SimplePdoWrapperInterface](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapperInterface.md)<br>
+Previous class: [SimplePdoWrapperInterface](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapperInterface.md)<br>Next class: [RicHelper](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/RicHelper.md)<br>
