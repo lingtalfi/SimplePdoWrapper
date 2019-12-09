@@ -775,8 +775,7 @@ Transaction examples
 
 
 ```php
-/
-**
+/**
  * @var $exception \Exception
  */
 $exception = null;
@@ -850,6 +849,10 @@ Related
 History Log
 ------------------
 
+- 1.10.2 -- 2019-12-09
+
+    - fix documentation typo in README.md   
+    
 - 1.10.1 -- 2019-12-06
 
     - fix RicHelper::getWhereByRics low security bug   
