@@ -168,7 +168,9 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
         $this->storeQueryObject($stmt);
 
         if (true === $stmt->execute($markers)) {
-            return $pdo->lastInsertId();
+            $lastInsertId = $pdo->lastInsertId();
+            $this->onSuccess('insert', $table, $query, [$fields, $options], $lastInsertId);
+            return $lastInsertId;
         }
         return false;
     }
@@ -199,7 +201,9 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
         $this->storeQueryObject($stmt);
 
         if (true === $stmt->execute($markers)) {
-            return $pdo->lastInsertId();
+            $lastInsertId = $pdo->lastInsertId();
+            $this->onSuccess('replace', $table, $query, [$fields, $options], $lastInsertId);
+            return $lastInsertId;
         }
         return false;
     }
@@ -230,6 +234,7 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
         $this->storeQueryObject($stmt);
 
         if (true === $stmt->execute($allMarkers)) {
+            $this->onSuccess('update', $table, $query, [$fields, $whereConds, $markers], true);
             return true;
         }
         return false;
@@ -253,7 +258,9 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
         $this->storeQueryObject($stmt);
 
         if (true === $stmt->execute($markers)) {
-            return $stmt->rowCount();
+            $rowCount = $stmt->rowCount();
+            $this->onSuccess('delete', $table, $query, [$whereConds, $markers], $rowCount);
+            return $rowCount;
         }
         return false;
     }
@@ -416,6 +423,34 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
         $this->queryObject = $queryObject;
     }
 
+    /**
+     * A hook for other classes to use.
+     * This hook is triggered every time one of the following operation is triggered (basically an operation that
+     * changes the state of the database):
+     *
+     * - insert
+     * - replace
+     * - update
+     * - delete
+     *
+     *
+     * Beware that if you use the executeStatement method to perform an insert for instance, this will not trigger
+     * this onSuccess method (i.e. you need to call the insert method directly).
+     *
+     *
+     * @param string $type
+     * @param string $table
+     * @param string $query
+     * @param array $arguments
+     * @param bool $return
+     *
+     * @overrideMe
+     */
+    protected function onSuccess(string $type, string $table, string $query, array $arguments, $return = true)
+    {
+
+    }
+
 
     /**
      *
@@ -475,4 +510,6 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
             $stmt .= ')';
         }
     }
+
+
 }
