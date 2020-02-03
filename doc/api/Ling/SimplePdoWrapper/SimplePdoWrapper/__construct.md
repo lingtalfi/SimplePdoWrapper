@@ -46,7 +46,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [SimplePdoWrapper::__construct](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/SimplePdoWrapper.php#L58-L62)
+See the source code for method [SimplePdoWrapper::__construct](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/SimplePdoWrapper.php#L59-L63)
 
 
 See Also

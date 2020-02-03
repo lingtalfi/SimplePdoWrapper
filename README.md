@@ -1,6 +1,6 @@
 SimplePdoWrapper
 ================
-2019-02-04 -> 2019-12-16
+2019-02-04 -> 2020-02-03
 
 
 
@@ -849,6 +849,10 @@ Related
 History Log
 ------------------
 
+- 1.12.0 -- 2020-02-03
+
+    - add SimpleTypeHelper   
+    
 - 1.11.0 -- 2019-12-16
 
     - add SimplePdoWrapper->onSuccess hook method   

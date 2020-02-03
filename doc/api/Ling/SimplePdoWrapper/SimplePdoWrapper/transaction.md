@@ -60,7 +60,7 @@ When the connexion is not set
 
 Source Code
 ===========
-See the source code for method [SimplePdoWrapper::transaction](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/SimplePdoWrapper.php#L113-L145)
+See the source code for method [SimplePdoWrapper::transaction](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/SimplePdoWrapper.php#L114-L146)
 
 
 See Also

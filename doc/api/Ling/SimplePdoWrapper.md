@@ -1,6 +1,6 @@
 Ling/SimplePdoWrapper
 ================
-2019-07-22 --> 2019-12-16
+2019-07-22 --> 2020-02-03
 
 
 
@@ -56,10 +56,13 @@ Table of contents
     - [MysqlInfoUtil::getForeignKeysInfo](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/MysqlInfoUtil/getForeignKeysInfo.md) &ndash; The getForeignKeysInfo method
 - [RicHelper](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/RicHelper.md) &ndash; The RicHelper class.
     - [RicHelper::getWhereByRics](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/RicHelper/getWhereByRics.md) &ndash; Returns the where part of an sql query (where keyword excluded) based on the given rics.
+- [SimpleTypeHelper](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/SimpleTypeHelper.md) &ndash; The SimpleTypeHelper class.
+    - [SimpleTypeHelper::getSimpleTypes](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/SimpleTypeHelper/getSimpleTypes.md) &ndash; Returns an array of column name => simple type from the given sql types.
 
 
 Dependencies
 ============
+- [CheapLogger](https://github.com/lingtalfi/CheapLogger)
 - [Bat](https://github.com/lingtalfi/Bat)
 
 

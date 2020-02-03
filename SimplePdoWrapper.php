@@ -4,6 +4,7 @@
 namespace Ling\SimplePdoWrapper;
 
 
+use Ling\CheapLogger\CheapLogger;
 use Ling\SimplePdoWrapper\Exception\NoPdoConnectionException;
 
 /**
@@ -153,6 +154,9 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
      */
     public function insert($table, array $fields = [], array $options = [])
     {
+
+
+
         // preparing the query
         $query = 'insert into ' . $table . ' ';
         $markers = [];
@@ -166,6 +170,7 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
         // executing the request
         $stmt = $pdo->prepare($query);
         $this->storeQueryObject($stmt);
+
 
         if (true === $stmt->execute($markers)) {
             $lastInsertId = $pdo->lastInsertId();
@@ -200,6 +205,7 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
         $stmt = $pdo->prepare($query);
         $this->storeQueryObject($stmt);
 
+
         if (true === $stmt->execute($markers)) {
             $lastInsertId = $pdo->lastInsertId();
             $this->onSuccess('replace', $table, $query, [$fields, $options], $lastInsertId);
@@ -216,7 +222,6 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
     public function update($table, array $fields, $whereConds = null, array $markers = [])
     {
 
-
         // preparing the query
         $query = 'update ' . $table . ' set ';
         $allMarkers = [];
@@ -232,6 +237,7 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
 
         $stmt = $pdo->prepare($query);
         $this->storeQueryObject($stmt);
+
 
         if (true === $stmt->execute($allMarkers)) {
             $this->onSuccess('update', $table, $query, [$fields, $whereConds, $markers], true);
@@ -450,6 +456,7 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
     {
 
     }
+
 
 
     /**

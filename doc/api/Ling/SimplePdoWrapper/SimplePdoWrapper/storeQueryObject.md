@@ -56,7 +56,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [SimplePdoWrapper::storeQueryObject](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/SimplePdoWrapper.php#L421-L424)
+See the source code for method [SimplePdoWrapper::storeQueryObject](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/SimplePdoWrapper.php#L427-L430)
 
 
 See Also
