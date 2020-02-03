@@ -56,11 +56,6 @@ Return values
 Returns array.
 
 
-Exceptions thrown
-================
-
-- [Exception](http://php.net/manual/en/class.exception.php).&nbsp;
-
 
 
 
@@ -69,7 +64,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [RicHelper::getRicByPkAndColumnsAndUniqueIndexes](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/RicHelper.php#L103-L119)
+See the source code for method [RicHelper::getRicByPkAndColumnsAndUniqueIndexes](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/RicHelper.php#L102-L118)
 
 
 See Also

@@ -98,7 +98,6 @@ class RicHelper
      * @param array $uniqueIndexes
      * @param bool $useStrictRic
      * @return array
-     * @throws \Exception
      */
     public static function getRicByPkAndColumnsAndUniqueIndexes(array $pk, array $columns, array $uniqueIndexes, bool $useStrictRic = false): array
     {
