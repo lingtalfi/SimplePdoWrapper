@@ -849,6 +849,10 @@ Related
 History Log
 ------------------
 
+- 1.13.0 -- 2020-02-03
+
+    - add RicHelper::getRicByPkAndColumnsAndUniqueIndexes method   
+    
 - 1.12.0 -- 2020-02-03
 
     - add SimpleTypeHelper   

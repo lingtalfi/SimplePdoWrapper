@@ -82,4 +82,39 @@ class RicHelper
         }
         return $s;
     }
+
+    /**
+     * Returns the @page(ric) array from the given arguments.
+     * - pk: An array of column names representing the primary key (can be an empty array if the table doesn't have a primary key)
+     * - columns: An array of column names
+     * - uniqueIndexes: An array of indexList. Each indexList is an array of column names representing an unique index.
+     *
+     *
+     *
+     *
+     *
+     * @param array $pk
+     * @param array $columns
+     * @param array $uniqueIndexes
+     * @param bool $useStrictRic
+     * @return array
+     * @throws \Exception
+     */
+    public static function getRicByPkAndColumnsAndUniqueIndexes(array $pk, array $columns, array $uniqueIndexes, bool $useStrictRic = false): array
+    {
+        $ric = $pk;
+        if (empty($ric)) {
+
+            if (true === $useStrictRic) {
+                $ric = $columns;
+            } else {
+                if ($uniqueIndexes) {
+                    $ric = current($uniqueIndexes);
+                } else {
+                    $ric = $columns;
+                }
+            }
+        }
+        return $ric;
+    }
 }
