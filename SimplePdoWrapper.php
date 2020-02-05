@@ -4,8 +4,9 @@
 namespace Ling\SimplePdoWrapper;
 
 
-use Ling\CheapLogger\CheapLogger;
 use Ling\SimplePdoWrapper\Exception\NoPdoConnectionException;
+use Ling\SimplePdoWrapper\Exception\SimplePdoWrapperException;
+use Ling\SimplePdoWrapper\Util\Where;
 
 /**
  * The SimplePdoWrapper is a base class implementing the non-driver-specific methods of the SimplePdoWrapperInterface interface.
@@ -154,7 +155,6 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
      */
     public function insert($table, array $fields = [], array $options = [])
     {
-
 
 
         // preparing the query
@@ -358,6 +358,7 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
      * @param $whereConds
      * @param $stmt
      * @param array $markers
+     * @throws \Exception
      */
     public static function addWhereSubStmt(&$stmt, array &$markers, $whereConds)
     {
@@ -371,7 +372,6 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
 
 
                 foreach ($whereConds as $field => $value) {
-
                     if (true === $first) {
                         $first = false;
                     } else {
@@ -389,6 +389,12 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
             }
         } elseif (is_string($whereConds)) {
             $stmt .= ' WHERE ' . $whereConds;
+        } elseif ($whereConds instanceof Where) {
+            $stmt .= " WHERE (";
+            $whereConds->apply($stmt, $markers);
+            $stmt .= " )";
+        } else {
+            throw new SimplePdoWrapperException("Unknown case of where.");
         }
     }
 
@@ -456,7 +462,6 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
     {
 
     }
-
 
 
     /**
