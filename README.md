@@ -54,6 +54,7 @@ Summary
      * [Fetch, the count query](#fetch-the-count-query)
   * [Fetch all examples](#fetch-all-examples)
      * [Fetch all, simple call](#fetch-all-simple-call)
+     * [Fetch all with like](#fetch-all-with-like)
      * [Fetch all, single column](#fetch-all-single-column)
      * [Fetch all, simple map with unique keys](#fetch-all-simple-map-with-unique-keys)
      * [Fetch all, rows grouped by](#fetch-all-rows-grouped-by)
@@ -589,6 +590,8 @@ a($wrapper->getError()); // null
 ```
 
 
+### Fetch all with like
+
 An example with like:
 
 ```php
@@ -849,6 +852,10 @@ Related
 History Log
 ------------------
 
+- 1.13.2 -- 2020-02-05
+
+    - update README.md, add link to like example 
+    
 - 1.13.1 -- 2020-02-03
 
     - fix documentation typo in RicHelper::getRicByPkAndColumnsAndUniqueIndexes 
