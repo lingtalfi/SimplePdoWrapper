@@ -591,7 +591,8 @@ The available combination methods are:
 See the [Where class](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where.md) for more details.
 
 
-
+Note: portion of sql generated from the **Where** object is always sql injection safe, as it uses pdo markers for all methods,
+including for each member of the the **in**/**not in** items. 
  
 
 
@@ -964,6 +965,10 @@ Related
 History Log
 ------------------
 
+- 1.15.2 -- 2020-02-06
+
+    - update README.md, add precision about Where 
+    
 - 1.15.1 -- 2020-02-06
 
     - fix documentation error in Where.conditionsList 
