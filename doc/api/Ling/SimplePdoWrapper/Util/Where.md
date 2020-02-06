@@ -96,7 +96,8 @@ Properties
     - 0: key, the name of the targeted column
     - 1: comparisonFunction, using the [susco notation](https://github.com/lingtalfi/NotationFan/blob/master/sql-unofficial-standard-comparison-operators.md)
     - 2: value1: the value used to compare the column against
-    - ?3: value2: the second value used to compare the column against, in case of the "between" and/or "not_between" operator.
+    - ?3: option: an optional value, depending ont he comparisonFunction used.
+         For instance the second value in case of the "between" and/or "not_between" operator, or the list of allowed wildchars with like methods.
     
     
 

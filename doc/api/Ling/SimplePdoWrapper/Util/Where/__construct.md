@@ -46,7 +46,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [Where::__construct](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/Where.php#L60-L64)
+See the source code for method [Where::__construct](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/Where.php#L61-L65)
 
 
 See Also

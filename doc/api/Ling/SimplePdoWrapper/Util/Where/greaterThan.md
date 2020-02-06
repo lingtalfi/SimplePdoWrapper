@@ -54,7 +54,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [Where::greaterThan](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/Where.php#L111-L114)
+See the source code for method [Where::greaterThan](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/Where.php#L112-L115)
 
 
 See Also

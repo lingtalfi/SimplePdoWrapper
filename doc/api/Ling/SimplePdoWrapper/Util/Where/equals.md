@@ -54,7 +54,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [Where::equals](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/Where.php#L98-L101)
+See the source code for method [Where::equals](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/Where.php#L99-L102)
 
 
 See Also

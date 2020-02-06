@@ -54,7 +54,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [Where::notEquals](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/Where.php#L163-L166)
+See the source code for method [Where::notEquals](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/Where.php#L164-L167)
 
 
 See Also

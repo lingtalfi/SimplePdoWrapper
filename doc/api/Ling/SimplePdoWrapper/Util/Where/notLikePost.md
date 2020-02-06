@@ -58,7 +58,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [Where::notLikePost](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/Where.php#L345-L348)
+See the source code for method [Where::notLikePost](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/Where.php#L346-L349)
 
 
 See Also

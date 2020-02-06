@@ -58,7 +58,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [Where::likeStrict](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/Where.php#L177-L180)
+See the source code for method [Where::likeStrict](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/Where.php#L178-L181)
 
 
 See Also

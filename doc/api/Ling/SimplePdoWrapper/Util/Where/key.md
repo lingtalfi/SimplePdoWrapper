@@ -49,7 +49,7 @@ Returns [Where](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/ap
 
 Source Code
 ===========
-See the source code for method [Where::key](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/Where.php#L84-L88)
+See the source code for method [Where::key](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/Where.php#L85-L89)
 
 
 See Also

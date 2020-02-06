@@ -51,7 +51,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [Where::isNotNull](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/Where.php#L435-L438)
+See the source code for method [Where::isNotNull](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/Where.php#L436-L439)
 
 
 See Also

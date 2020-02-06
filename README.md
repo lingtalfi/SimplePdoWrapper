@@ -964,6 +964,10 @@ Related
 History Log
 ------------------
 
+- 1.15.1 -- 2020-02-06
+
+    - fix documentation error in Where.conditionsList 
+    
 - 1.15.0 -- 2020-02-06
 
     - add alias methods to Where (contains, startsWith, endsWith, notContaining, notStartingWith, notEndingWith)

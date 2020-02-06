@@ -46,7 +46,7 @@ Returns static.
 
 Source Code
 ===========
-See the source code for method [Where::inst](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/Where.php#L71-L74)
+See the source code for method [Where::inst](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/Where.php#L72-L75)
 
 
 See Also
