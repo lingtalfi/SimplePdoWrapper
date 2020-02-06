@@ -193,6 +193,21 @@ class Where
         return $this->operator("%like%", $value, $allowedWildChars);
     }
 
+
+    /**
+     * Alias of the like method.
+     *
+     * @param $value
+     * @param $allowedWildChars = null
+     * @return $this
+     * @throws \Exception
+     */
+    public function contains($value, $allowedWildChars = null): self
+    {
+        return $this->operator("%like%", $value, $allowedWildChars);
+    }
+
+
     /**
      * Proxy to the operator method, with a predefined operator of "%like".
      *
@@ -208,6 +223,20 @@ class Where
 
 
     /**
+     * Alias of the likePre method.
+     *
+     * @param $value
+     * @param $allowedWildChars = null
+     * @return $this
+     * @throws \Exception
+     */
+    public function startsWith($value, $allowedWildChars = null): self
+    {
+        return $this->operator("%like", $value, $allowedWildChars);
+    }
+
+
+    /**
      * Proxy to the operator method, with a predefined operator of "like%".
      *
      * @param $value
@@ -216,6 +245,20 @@ class Where
      * @throws \Exception
      */
     public function likePost($value, $allowedWildChars = null): self
+    {
+        return $this->operator("like%", $value, $allowedWildChars);
+    }
+
+
+    /**
+     * Alias of the likePost method.
+     *
+     * @param $value
+     * @param $allowedWildChars = null
+     * @return $this
+     * @throws \Exception
+     */
+    public function endsWith($value, $allowedWildChars = null): self
     {
         return $this->operator("like%", $value, $allowedWildChars);
     }
@@ -248,6 +291,21 @@ class Where
         return $this->operator("%not_like%", $value, $allowedWildChars);
     }
 
+
+    /**
+     * Alias of the notLike method.
+     *
+     * @param $value
+     * @param $allowedWildChars = null
+     * @return $this
+     * @throws \Exception
+     */
+    public function notContaining($value, $allowedWildChars = null): self
+    {
+        return $this->operator("%not_like%", $value, $allowedWildChars);
+    }
+
+
     /**
      * Proxy to the operator method, with a predefined operator of "%not_like".
      *
@@ -263,6 +321,20 @@ class Where
 
 
     /**
+     * Alias of the notLikePre method.
+     *
+     * @param $value
+     * @param $allowedWildChars = null
+     * @return $this
+     * @throws \Exception
+     */
+    public function notStartingWith($value, $allowedWildChars = null): self
+    {
+        return $this->operator("%not_like", $value, $allowedWildChars);
+    }
+
+
+    /**
      * Proxy to the operator method, with a predefined operator of "not_like%".
      *
      * @param $value
@@ -271,6 +343,20 @@ class Where
      * @throws \Exception
      */
     public function notLikePost($value, $allowedWildChars = null): self
+    {
+        return $this->operator("not_like%", $value, $allowedWildChars);
+    }
+
+
+    /**
+     * Alias of the notLikePost method.
+     *
+     * @param $value
+     * @param $allowedWildChars = null
+     * @return $this
+     * @throws \Exception
+     */
+    public function notEndingWith($value, $allowedWildChars = null): self
     {
         return $this->operator("not_like%", $value, $allowedWildChars);
     }
@@ -361,7 +447,7 @@ class Where
      * The option is used only by the following operators:
      *
      * - for like/not like: string|null = null.
-     *      The list of wild chars allowed (i.e. interpreted as such) in the given value.
+     *      The list of wild chars allowed (i.e. interpreted as such) inside the given value.
      *
      *      The possible wild chars in mysql are:
      *          - _ (underscore)

@@ -54,7 +54,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [Where::notIn](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/Where.php#L298-L301)
+See the source code for method [Where::notIn](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/Where.php#L384-L387)
 
 
 See Also

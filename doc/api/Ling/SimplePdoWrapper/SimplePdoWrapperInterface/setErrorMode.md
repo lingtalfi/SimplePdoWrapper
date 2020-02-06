@@ -55,7 +55,7 @@ When the connection is not defined.
 
 Source Code
 ===========
-See the source code for method [SimplePdoWrapperInterface::setErrorMode](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/SimplePdoWrapperInterface.php#L231-L231)
+See the source code for method [SimplePdoWrapperInterface::setErrorMode](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/SimplePdoWrapperInterface.php#L235-L235)
 
 
 See Also

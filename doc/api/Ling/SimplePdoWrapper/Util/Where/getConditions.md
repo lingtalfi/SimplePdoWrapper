@@ -46,7 +46,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [Where::getConditions](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/Where.php#L560-L563)
+See the source code for method [Where::getConditions](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/Where.php#L646-L649)
 
 
 See Also

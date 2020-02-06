@@ -29,7 +29,7 @@ and returns this instance for chaining.
 The option is used only by the following operators:
 
 - for like/not like: string|null = null.
-     The list of wild chars allowed (i.e. interpreted as such) in the given value.
+     The list of wild chars allowed (i.e. interpreted as such) inside the given value.
 
      The possible wild chars in mysql are:
          - _ (underscore)
@@ -80,7 +80,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [Where::operator](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/Where.php#L383-L398)
+See the source code for method [Where::operator](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/Where.php#L469-L484)
 
 
 See Also

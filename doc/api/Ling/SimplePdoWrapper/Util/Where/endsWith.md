@@ -2,12 +2,12 @@
 [Back to the Ling\SimplePdoWrapper\Util\Where class](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where.md)
 
 
-Where::in
+Where::endsWith
 ================
 
 
 
-Where::in — Proxy to the operator method, with a predefined operator of "in".
+Where::endsWith — Alias of the likePost method.
 
 
 
@@ -16,12 +16,12 @@ Description
 ================
 
 
-public [Where::in](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/in.md)($value) : [Where](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where.md)
+public [Where::endsWith](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/endsWith.md)($value, ?$allowedWildChars = null) : [Where](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where.md)
 
 
 
 
-Proxy to the operator method, with a predefined operator of "in".
+Alias of the likePost method.
 
 
 
@@ -31,6 +31,10 @@ Parameters
 
 
 - value
+
+    
+
+- allowedWildChars
 
     
 
@@ -54,7 +58,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [Where::in](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/Where.php#L372-L375)
+See the source code for method [Where::endsWith](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/Where.php#L261-L264)
 
 
 See Also
@@ -62,5 +66,5 @@ See Also
 
 The [Where](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where.md) class.
 
-Previous method: [notEndingWith](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/notEndingWith.md)<br>Next method: [notIn](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/notIn.md)<br>
+Previous method: [likePost](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/likePost.md)<br>Next method: [notLikeStrict](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/notLikeStrict.md)<br>
 

@@ -1,6 +1,6 @@
 SimplePdoWrapper
 ================
-2019-02-04 -> 2020-02-05
+2019-02-04 -> 2020-02-06
 
 
 
@@ -49,6 +49,7 @@ Summary
   * [Delete examples](#delete-examples)
      * [Deleting some records.](#deleting-some-records)
      * [Delete all records](#delete-all-records)
+  * [The where conditions](#the-where-conditions)
   * [Fetch examples](#fetch-examples)
      * [Fetch a single row](#fetch-a-single-row)
      * [Fetch, the count query](#fetch-the-count-query)
@@ -401,6 +402,8 @@ Or using the whereConds string, with markers:
 ```
 
 
+There are more forms of whereConds, see the **where conditions** section below for more details.
+
 
 Important, at least in mysql the update method will still return true even if
 the where clause doesn't match any row and no row was updated:
@@ -469,6 +472,10 @@ a($res); // 2 (or more generally the number or deleted rows)
 a($wrapper->getError()); // null
 ```
 
+
+There are more forms of whereConds, see the **where conditions** section below for more details.
+
+
 ### Delete all records
 
 
@@ -480,7 +487,112 @@ a($wrapper->getError()); // null
 ```
 
 
+The where conditions
+-------------------
+2020-02-06
 
+
+Both the **update** and the **delete** methods have a "where conditions" argument.
+In this section let's examine that argument in more depth.
+
+The **where conditions** argument can have 3 forms:
+
+
+### array of key/value pairs
+
+This ought to be the most common form.
+An implicit "equals" comparison operator is used, as well as an **AND** combination operator, as in the **WHERE key equals value AND** expression.
+
+Example:
+
+```php
+$whereConds = [
+    "category" => "fruit", // translates to: where category = fruit and ...
+    "item" => "apple",  // ...item = apple
+];
+```
+
+
+Note: under the hood, when translated to an actual query portion, pdo markers are used for each entry of the array, to avoid sql injection.
+
+
+### the string form
+
+The string form is the most flexible, as it lets you write the where portion of the query using the sql language directly (i.e. not treatment).
+You can be get as complex as you want with this form, the only limit is your sql syntax knowledge.
+
+Recommendation: remember to use pdo markers to avoid sql injection, and if you do use pdo markers don't forget to pass via the markers argument
+of the method.
+
+Example:
+
+
+```php
+$markers = [
+    ":category" => "category",
+    ":item" => "apple",
+];
+$whereConds = "category = :category and (item = :item or id <= 50)";
+```
+
+### the Where object
+
+Because it was hard for me to remember the **like** notation (i.e. using the addcslash php method and wild chars...), I created the **Where** object,
+which basically is a more elaborated form of the array, which handles all [standard mysql operators](https://github.com/lingtalfi/NotationFan/blob/master/sql-unofficial-standard-comparison-operators.md).
+
+This object is helping building the conditions list, we do so by alternating calls to the **key** method and an **comparison operator** method of our choice,
+until our conditions list is fulfilled. 
+
+Example:
+
+```php
+$whereConds = Where::inst()
+    ->key("category")->equals("fruit")
+    ->key("item")->equals("apple")
+    ->key("name")->like("e")
+    ;
+```
+
+The available combination methods are:
+
+- equals (value)
+- greaterThan (value)
+- greaterThanOrEqualTo (value)
+- lessThan (value)
+- lessThanOrEqualTo (value)
+- notEquals (value)
+- likeStrict (value, ?allowedWildChars): equivalent of using the **like** [susco](https://github.com/lingtalfi/NotationFan/blob/master/sql-unofficial-standard-comparison-operators.md) operator.
+    The allowedWildChars is the list of wild chars allowed to be interpreted as such in the value (by default no wild chars is allowed inside the value).
+    Possible wild chars in mysql are: "_" and "%".
+- like (value, ?allowedWildChars): same as likeStrict, but with the **%like%** susco operator.
+- likePre (value, ?allowedWildChars): same as likeStrict, but with the **%like** susco operator.
+- likePost (value, ?allowedWildChars): same as likeStrict, but with the **like%** susco operator.
+
+- contains (value, ?allowedWildChars): alias of **like**.
+- startsWith (value, ?allowedWildChars): alias of **likePre**.
+- endsWith (value, ?allowedWildChars): alias of **likePost**.
+
+- notLikeStrict (value, ?allowedWildChars): same as likeStrict, but with the **not_like** susco operator.
+- notLike (value, ?allowedWildChars): same as likeStrict, but with the **%not_like%** susco operator.
+- notLikePre (value, ?allowedWildChars): same as likeStrict, but with the **%not_like** susco operator.
+- notLikePost (value, ?allowedWildChars): same as likeStrict, but with the **not_like%** susco operator.
+
+- notContaining (value, ?allowedWildChars): alias of **notLike**.
+- notStartingWith (value, ?allowedWildChars): alias of **notLikePre**.
+- notEndingWith (value, ?allowedWildChars): alias of **notLikePost**.
+
+- in (array value)
+- notIn (array value)
+- between (value1, value2)
+- notBetween (value1, value2)
+- isNull ()
+- isNotNull ()
+
+See the [Where class](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where.md) for more details.
+
+
+
+ 
 
 
 Fetch examples
@@ -852,6 +964,10 @@ Related
 History Log
 ------------------
 
+- 1.15.0 -- 2020-02-06
+
+    - add alias methods to Where (contains, startsWith, endsWith, notContaining, notStartingWith, notEndingWith)
+    
 - 1.14.0 -- 2020-02-05
 
     - add Where util 
