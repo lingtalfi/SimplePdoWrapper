@@ -58,7 +58,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [Where::likePost](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/Where.php#L248-L251)
+See the source code for method [Where::likePost](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/Where.php#L247-L250)
 
 
 See Also
@@ -66,5 +66,5 @@ See Also
 
 The [Where](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where.md) class.
 
-Previous method: [startsWith](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/startsWith.md)<br>Next method: [endsWith](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/endsWith.md)<br>
+Previous method: [endsWith](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/endsWith.md)<br>Next method: [startsWith](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/startsWith.md)<br>
 

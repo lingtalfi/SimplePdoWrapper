@@ -222,7 +222,6 @@ class Where
         return $this->operator("%like", $value, $allowedWildChars);
     }
 
-
     /**
      * Alias of the likePre method.
      *
@@ -231,7 +230,7 @@ class Where
      * @return $this
      * @throws \Exception
      */
-    public function startsWith($value, $allowedWildChars = null): self
+    public function endsWith($value, $allowedWildChars = null): self
     {
         return $this->operator("%like", $value, $allowedWildChars);
     }
@@ -259,10 +258,11 @@ class Where
      * @return $this
      * @throws \Exception
      */
-    public function endsWith($value, $allowedWildChars = null): self
+    public function startsWith($value, $allowedWildChars = null): self
     {
         return $this->operator("like%", $value, $allowedWildChars);
     }
+
 
 
     /**
@@ -320,7 +320,6 @@ class Where
         return $this->operator("%not_like", $value, $allowedWildChars);
     }
 
-
     /**
      * Alias of the notLikePre method.
      *
@@ -329,10 +328,11 @@ class Where
      * @return $this
      * @throws \Exception
      */
-    public function notStartingWith($value, $allowedWildChars = null): self
+    public function notEndingWith($value, $allowedWildChars = null): self
     {
         return $this->operator("%not_like", $value, $allowedWildChars);
     }
+
 
 
     /**
@@ -348,7 +348,6 @@ class Where
         return $this->operator("not_like%", $value, $allowedWildChars);
     }
 
-
     /**
      * Alias of the notLikePost method.
      *
@@ -357,10 +356,11 @@ class Where
      * @return $this
      * @throws \Exception
      */
-    public function notEndingWith($value, $allowedWildChars = null): self
+    public function notStartingWith($value, $allowedWildChars = null): self
     {
         return $this->operator("not_like%", $value, $allowedWildChars);
     }
+
 
 
     /**

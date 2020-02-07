@@ -7,7 +7,7 @@ Where::startsWith
 
 
 
-Where::startsWith — Alias of the likePre method.
+Where::startsWith — Alias of the likePost method.
 
 
 
@@ -21,7 +21,7 @@ public [Where::startsWith](https://github.com/lingtalfi/SimplePdoWrapper/blob/ma
 
 
 
-Alias of the likePre method.
+Alias of the likePost method.
 
 
 
@@ -58,7 +58,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [Where::startsWith](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/Where.php#L234-L237)
+See the source code for method [Where::startsWith](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/Where.php#L261-L264)
 
 
 See Also
@@ -66,5 +66,5 @@ See Also
 
 The [Where](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where.md) class.
 
-Previous method: [likePre](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/likePre.md)<br>Next method: [likePost](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/likePost.md)<br>
+Previous method: [likePost](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/likePost.md)<br>Next method: [notLikeStrict](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/notLikeStrict.md)<br>
 

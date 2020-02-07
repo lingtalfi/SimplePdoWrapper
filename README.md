@@ -1,6 +1,6 @@
 SimplePdoWrapper
 ================
-2019-02-04 -> 2020-02-06
+2019-02-04 -> 2020-02-07
 
 
 
@@ -964,6 +964,10 @@ Related
 
 History Log
 ------------------
+
+- 1.15.3 -- 2020-02-07
+
+    - fix Where, inverted startingWith and endingWith methods functionality 
 
 - 1.15.2 -- 2020-02-06
 

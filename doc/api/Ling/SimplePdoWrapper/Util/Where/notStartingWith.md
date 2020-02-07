@@ -7,7 +7,7 @@ Where::notStartingWith
 
 
 
-Where::notStartingWith — Alias of the notLikePre method.
+Where::notStartingWith — Alias of the notLikePost method.
 
 
 
@@ -21,7 +21,7 @@ public [Where::notStartingWith](https://github.com/lingtalfi/SimplePdoWrapper/bl
 
 
 
-Alias of the notLikePre method.
+Alias of the notLikePost method.
 
 
 
@@ -58,7 +58,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [Where::notStartingWith](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/Where.php#L332-L335)
+See the source code for method [Where::notStartingWith](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/Where.php#L359-L362)
 
 
 See Also
@@ -66,5 +66,5 @@ See Also
 
 The [Where](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where.md) class.
 
-Previous method: [notLikePre](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/notLikePre.md)<br>Next method: [notLikePost](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/notLikePost.md)<br>
+Previous method: [notLikePost](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/notLikePost.md)<br>Next method: [in](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/in.md)<br>
 

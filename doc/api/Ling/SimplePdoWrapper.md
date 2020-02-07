@@ -1,6 +1,6 @@
 Ling/SimplePdoWrapper
 ================
-2019-07-22 --> 2020-02-06
+2019-07-22 --> 2020-02-07
 
 
 
@@ -73,16 +73,16 @@ Table of contents
     - [Where::like](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/like.md) &ndash; Proxy to the operator method, with a predefined operator of "%like%".
     - [Where::contains](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/contains.md) &ndash; Alias of the like method.
     - [Where::likePre](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/likePre.md) &ndash; Proxy to the operator method, with a predefined operator of "%like".
-    - [Where::startsWith](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/startsWith.md) &ndash; Alias of the likePre method.
+    - [Where::endsWith](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/endsWith.md) &ndash; Alias of the likePre method.
     - [Where::likePost](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/likePost.md) &ndash; Proxy to the operator method, with a predefined operator of "like%".
-    - [Where::endsWith](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/endsWith.md) &ndash; Alias of the likePost method.
+    - [Where::startsWith](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/startsWith.md) &ndash; Alias of the likePost method.
     - [Where::notLikeStrict](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/notLikeStrict.md) &ndash; Proxy to the operator method, with a predefined operator of "not_like".
     - [Where::notLike](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/notLike.md) &ndash; Proxy to the operator method, with a predefined operator of "%not_like%".
     - [Where::notContaining](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/notContaining.md) &ndash; Alias of the notLike method.
     - [Where::notLikePre](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/notLikePre.md) &ndash; Proxy to the operator method, with a predefined operator of "%not_like".
-    - [Where::notStartingWith](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/notStartingWith.md) &ndash; Alias of the notLikePre method.
+    - [Where::notEndingWith](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/notEndingWith.md) &ndash; Alias of the notLikePre method.
     - [Where::notLikePost](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/notLikePost.md) &ndash; Proxy to the operator method, with a predefined operator of "not_like%".
-    - [Where::notEndingWith](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/notEndingWith.md) &ndash; Alias of the notLikePost method.
+    - [Where::notStartingWith](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/notStartingWith.md) &ndash; Alias of the notLikePost method.
     - [Where::in](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/in.md) &ndash; Proxy to the operator method, with a predefined operator of "in".
     - [Where::notIn](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/notIn.md) &ndash; Proxy to the operator method, with a predefined operator of "not_in".
     - [Where::between](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/between.md) &ndash; Proxy to the operator method, with a predefined operator of "between".
