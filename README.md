@@ -1,6 +1,6 @@
 SimplePdoWrapper
 ================
-2019-02-04 -> 2020-02-07
+2019-02-04 -> 2020-02-12
 
 
 
@@ -30,6 +30,7 @@ Or just download it and place it where you want otherwise.
 Summary
 =================
 * [SimplePdoWrapper api](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper.md) (generated with [DocTools](https://github.com/lingtalfi/DocTools))
+* [Conception notes](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/pages/conception-notes.md)
 * [SimplePdoWrapper](#simplepdowrapper-1)
 * [Connexion](#connexion)
   * [Using mysql](#using-mysql)
@@ -965,6 +966,10 @@ Related
 History Log
 ------------------
 
+- 1.16.0 -- 2020-02-12
+
+    - add MysqlInfoUtil->getReverseForeignKeyMap and getHasItems methods  
+    
 - 1.15.3 -- 2020-02-07
 
     - fix Where, inverted startingWith and endingWith methods functionality 

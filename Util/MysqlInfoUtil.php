@@ -4,7 +4,7 @@
 namespace Ling\SimplePdoWrapper\Util;
 
 
-use Ling\SimplePdoWrapper\Exception\SimplePdoWrapperException;
+use Ling\SimplePdoWrapper\Exception\MysqlInfoUtilException;
 use Ling\SimplePdoWrapper\SimplePdoWrapperInterface;
 
 /**
@@ -21,6 +21,18 @@ class MysqlInfoUtil
      */
     protected $wrapper;
 
+    /**
+     * This property holds the defaultHasKeywords for this instance.
+     * @var array
+     */
+    protected $defaultHasKeywords;
+
+    /**
+     * This property holds the defaultHandleLabels for this instance.
+     * @var array
+     */
+    protected $defaultHandleLabels;
+
 
     /**
      * Builds the MysqlInfoUtil instance.
@@ -29,6 +41,14 @@ class MysqlInfoUtil
     public function __construct(SimplePdoWrapperInterface $wrapper = null)
     {
         $this->wrapper = $wrapper;
+        $this->defaultHasKeywords = [
+            "has",
+        ];
+        $this->defaultHandleLabels = [
+            "name",
+            "label",
+            "identifier",
+        ];
     }
 
     /**
@@ -318,14 +338,7 @@ EEE;
     public function getForeignKeysInfo(string $table)
     {
         $ret = [];
-        $schema = null;
-        $p = explode('.', $table, 2);
-        if (2 === count($p)) {
-            list($schema, $table) = $p;
-        }
-        if (null === $schema) {
-            $schema = $this->getDatabase();
-        }
+        list($schema, $table) = $this->splitTableName($table);
 
         if (false !== ($rows = $this->wrapper->fetchAll("
 select 
@@ -365,6 +378,245 @@ and CONSTRAINT_TYPE = 'FOREIGN KEY'
     }
 
 
+    /**
+     * Returns an array of tableId  => referencedByTableIds for the given databases.
+     * If no database is given, the current database will be used.
+     *
+     * With:
+     *
+     * - tableId: string, the full table name, using the notation $db.$table
+     * - referencedByTableIds: array of referencedByTableId items, each of which being a full table name using the notation $db.$table.
+     *
+     *
+     * @param array|null $databases
+     * @return array
+     * @throws \Exception
+     */
+    public function getReverseForeignKeyMap(array $databases = null): array
+    {
+        $currentDb = $this->getDatabase();
+        if (null === $databases) {
+            $databases = [$currentDb];
+        }
+        $ret = [];
+        foreach ($databases as $database) {
+            $this->changeDatabase($database);
+            $tables = $this->getTables();
+            foreach ($tables as $table) {
+                $fks = $this->getForeignKeysInfo($database . "." . $table);
+                foreach ($fks as $col => $fkInfo) {
+                    list($fdb, $ftable, $fcol) = $fkInfo;
+                    $ret["$fdb.$ftable"][] = "$database.$table";
+                }
+            }
+        }
+        $this->changeDatabase($currentDb);
+        return $ret;
+    }
+
+
+    /**
+     * Returns an array of "has items".
+     * See more details in @page(the conception notes about has table information).
+     *
+     * Each "has item" has the following structure:
+     *
+     * - owns_the_has: bool, whether the current table owns the **has** table or is owned by it.
+     * - has_table: string, the name of the **has** table
+     * - left_table: string, the name of the owner table
+     * - right_table: string, the name of the owned table
+     * - left_fk: string, the name of the foreign key column of the **has** table pointing to the left table
+     * - right_fk: string, the name of the foreign key column of the **has** table pointing to the right table
+     * - referenced_by_left: string, the name of the column of the **left** table referencing the **has** table's foreign key
+     * - referenced_by_right: string, the name of the column of the **right** table referencing the **has** table's foreign key
+     * - left_handles: array of potential handles. Each handle is an array representing a set of columns that this method consider should be used as a handle related to the **left** table.
+     *      This method will list the following handles:
+     * - the column of the **left** table referencing the **has** table's foreign key (same value as the **referenced_by_left** property)
+     * - the unique indexes of the **left** table
+     *
+     * - right_handles: array of potential handles. Each handle is an array representing a set of columns that this method consider should be used as a handle related to the **right** table.
+     *      This method will list the following handles:
+     *      - the column of the **right** table referencing the **has** table's foreign key (same value as the **referenced_by_right** property).
+     *      - a "natural" column that has a common name for a handle, based on a list which the developer can provide, and which defaults to:
+     *          - name
+     *          - label
+     *          - identifier
+     *
+     * - the unique indexes of the **right** table that have only one column (i.e not the unique indexes with multiple columns).
+     *      If the unique index column contains only the aforementioned "natural" column, this particular index is discarded (as to avoid redundancy).
+     *
+     *
+     *
+     * The available options are:
+     * - hasKeywords: array of potential has keywords. Defaults to an array containing the "has" keyword.
+     * - naturalHandleLabels: array of potential column names for the handles. Defaults to the following array:
+     *      - name
+     *      - label
+     *      - identifier
+     *
+     *
+     * @param string $table
+     * @param array $options
+     * @return array
+     * @throws \Exception
+     */
+    public function getHasItems(string $table, array $options = []): array
+    {
+
+        /**
+         * Need help? follow me...
+         *
+         * Example of 3 tables from the jindemo database:
+         *
+         * - luda_resource
+         * - luda_resource_has_tag
+         * - luda_tag
+         *
+         * Analyzing of the luda_resource table below (for instance).
+         *
+         */
+
+        $ret = [];
+        list($db, $table) = $this->splitTableName($table);
+
+        $fullTable = $db . "." . $table;
+        $reverseFkeyMap = $this->getReverseForeignKeyMap([$db]);
+
+        if (array_key_exists($fullTable, $reverseFkeyMap)) {
+            /**
+             * Will contain the jindemo.luda_resource_has_tag table,
+             * which is the only has table in our example.
+             */
+            $rfkTables = $reverseFkeyMap[$fullTable];
+            foreach ($rfkTables as $referenceByFullTable) {
+
+                if (true === $this->isHasTable($referenceByFullTable, $options)) {
+                    $p = explode(".", $referenceByFullTable, 2);
+                    $referenceByTable = array_pop($p);
+                    $leftInfo = null;
+                    $rightInfo = null;
+                    $leftKey = null;
+                    $rightKey = null;
+                    /**
+                     * Here we've gor the foreign keys of the resource_has_tag table:
+                     *
+                     * - resource_id:
+                     *      0: jindemo
+                     *      1: luda_resource
+                     *      2: id
+                     * - tag_id:
+                     *      0: jindemo
+                     *      1: luda_tag
+                     *      2: id
+                     *
+                     * We want to find which one is the right, and which one is the left.
+                     * Logic (at least european logic) will tend to put the left member first.
+                     * This logic is not absolute though, and so the code below might be reworked later.
+                     * todo: rework this part, not very reliable.
+                     *
+                     */
+                    $fkeys = $this->getForeignKeysInfo($referenceByTable);
+                    if (2 === count($fkeys)) {
+
+                        reset($fkeys);
+                        $leftKey = key($fkeys);
+                        $leftInfo = array_shift($fkeys);
+                        $rightKey = key($fkeys);
+                        $rightInfo = array_shift($fkeys);
+
+                    } else {
+                        throw new MysqlInfoUtilException("Not implemented yet with count fkeys > 2.");
+                    }
+
+
+                    $isOwner = ($leftInfo[1] === $table);
+
+                    /**
+                     * Handles.
+                     * See my conception notes ("The has table information" section) for the technical guide behind this code.
+                     * https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/pages/conception-notes.md#the-has-table-information
+                     */
+                    $leftUniqueIndexes = $this->getUniqueIndexes($leftInfo[1]);
+                    $leftHandles = [
+                        [$leftInfo[2]],
+                    ];
+                    foreach ($leftUniqueIndexes as $index) {
+                        $leftHandles[] = $index;
+                    }
+                    $rightUniqueIndexes = $this->getUniqueIndexes($rightInfo[1]);
+                    $rightHandles = [
+                        [$rightInfo[2]],
+                    ];
+                    $handleLabels = $options['naturalHandleLabels'] ?? null;
+                    $naturalHandle = $this->getNaturalHandle($rightInfo[1], $handleLabels);
+                    if (false !== $naturalHandle) {
+                        $rightHandles[] = [$naturalHandle];
+                    }
+
+                    foreach ($rightUniqueIndexes as $index) {
+                        if (1 === count($index)) {
+                            $indexColumn = array_shift($index);
+                            if ($naturalHandle !== $indexColumn) {
+                                $rightHandles[] = $index;
+                            }
+                        }
+                    }
+
+
+                    $ret[] = [
+                        "is_owner" => $isOwner,
+                        "has_table" => $referenceByTable,
+                        "left_table" => $leftInfo[1],
+                        "right_table" => $rightInfo[1],
+                        "left_fk" => $leftKey,
+                        "right_fk" => $rightKey,
+                        "referenced_by_left" => $leftInfo[2],
+                        "referenced_by_right" => $rightInfo[2],
+                        "left_handles" => $leftHandles,
+                        "right_handles" => $rightHandles,
+                    ];
+                }
+            }
+        }
+        return $ret;
+    }
+
+
+    /**
+     * Returns whether the given table is a **has** table, based on the table name.
+     * See more details in @page(the conception notes about has table information).
+     *
+     * The available options are:
+     * - hasKeywords: array of potential has keywords. Defaults to an array containing the "has" keyword.
+     *
+     *
+     *
+     * @param string $table
+     * @param array $options
+     * @return bool
+     * @throws \Exception
+     */
+    public function isHasTable(string $table, array $options = []): bool
+    {
+        list($db, $table) = $this->splitTableName($table);
+
+
+        $hasKeywords = $options['hasKeywords'] ?? $this->defaultHasKeywords;
+        foreach ($hasKeywords as $hasKeyword) {
+            $hasKeyword = "_" . $hasKeyword . "_";
+            if (false !== strpos($table, $hasKeyword)) {
+                $fk = $this->getForeignKeysInfo($table);
+                if (count($fk) >= 2) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+
+
+
     //--------------------------------------------
     //
     //--------------------------------------------
@@ -399,4 +651,63 @@ and CONSTRAINT_TYPE = 'FOREIGN KEY'
 //            $c++;
 //        }
 //    }
+
+    //--------------------------------------------
+    //
+    //--------------------------------------------
+    /**
+     * Returns an array with the following info:
+     * - database: string
+     * - table: string
+     *
+     * Those information are extracted from the given table name, which might use the db.table notation,
+     * or just be a single table name. In case of a single table name, the database returned is the current database.
+     *
+     *
+     *
+     * @param string $table
+     * @return array
+     */
+    private function splitTableName(string $table): array
+    {
+        $schema = null;
+        $p = explode('.', $table, 2);
+        if (2 === count($p)) {
+            list($schema, $table) = $p;
+        }
+        if (null === $schema) {
+            $schema = $this->getDatabase();
+        }
+        return [$schema, $table];
+    }
+
+    /**
+     * Returns the natural handle for the given table, based on the given handleLabels.
+     * Returns false if no natural handle was found.
+     *
+     *
+     * @param string $table
+     * @param array|null $handleLabels
+     * @return string|false
+     * @throws \Exception
+     */
+    private function getNaturalHandle(string $table, array $handleLabels = null)
+    {
+        list($db, $table) = $this->splitTableName($table);
+
+        if (null === $handleLabels) {
+            $handleLabels = $this->defaultHandleLabels;
+        }
+
+        $columnNames = $this->getColumnNames($table);
+        foreach ($columnNames as $columnName) {
+            if (in_array($columnName, $handleLabels, true)) {
+                return $columnName;
+            }
+        }
+
+        return false;
+
+    }
+
 }
