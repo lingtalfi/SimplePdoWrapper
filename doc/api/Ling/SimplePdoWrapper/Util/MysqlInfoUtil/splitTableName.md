@@ -54,7 +54,7 @@ Returns array.
 
 Source Code
 ===========
-See the source code for method [MysqlInfoUtil::splitTableName](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/MysqlInfoUtil.php#L671-L682)
+See the source code for method [MysqlInfoUtil::splitTableName](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/MysqlInfoUtil.php#L704-L715)
 
 
 See Also

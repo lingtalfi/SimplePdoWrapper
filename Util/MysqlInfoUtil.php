@@ -416,6 +416,39 @@ and CONSTRAINT_TYPE = 'FOREIGN KEY'
 
 
     /**
+     * Returns the array of tables having a foreign key referencing the given table.
+     * It's an array of full table names (i.e. $db.$table notation).
+     *
+     * The databases argument is the set of databases to search inside of.
+     * If null (by default), the current database only will be used.
+     *
+     * The table argument can use the full notation (i.e. $db.$table) or be just the single table name.
+     * If it uses the full notation, make sure to pass the database of the table to the databases argument.
+     *
+     *
+     *
+     * @param string $table
+     * @param array|null $databases
+     * @return array
+     * @throws \Exception
+     */
+    public function getReferencedByTables(string $table, array $databases = null): array
+    {
+        if (null === $databases) {
+            $databases = [$this->getDatabase()];
+        }
+        list($schema, $table) = $this->splitTableName($table);
+        $fullTableName = $schema . "." . $table;
+        $rfkMap = $this->getReverseForeignKeyMap($databases);
+        if (array_key_exists($fullTableName, $rfkMap)) {
+            return $rfkMap[$fullTableName];
+        }
+        return [];
+
+    }
+
+
+    /**
      * Returns an array of "has items".
      * See more details in @page(the conception notes about has table information).
      *

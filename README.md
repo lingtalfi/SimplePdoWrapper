@@ -1,6 +1,6 @@
 SimplePdoWrapper
 ================
-2019-02-04 -> 2020-02-12
+2019-02-04 -> 2020-02-13
 
 
 
@@ -966,6 +966,10 @@ Related
 History Log
 ------------------
 
+- 1.17.0 -- 2020-02-13
+
+    - add MysqlInfoUtil->getReferencedByTables method  
+    
 - 1.16.0 -- 2020-02-12
 
     - add MysqlInfoUtil->getReverseForeignKeyMap and getHasItems methods  
