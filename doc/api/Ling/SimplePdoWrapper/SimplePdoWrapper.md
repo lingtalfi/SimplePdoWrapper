@@ -4,7 +4,7 @@
 
 The SimplePdoWrapper class
 ================
-2019-07-22 --> 2020-02-13
+2019-07-22 --> 2020-03-03
 
 
 
@@ -25,6 +25,7 @@ Class synopsis
 class <span class="pl-k">SimplePdoWrapper</span> implements [SimplePdoWrapperInterface](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapperInterface.md) {
 
 - Properties
+    - public static bool [$isSystemCall](#property-isSystemCall) = false ;
     - protected static int [$defaultFetchStyle](#property-defaultFetchStyle) = 2 ;
     - protected [\PDO](https://www.php.net/manual/en/class.pdo.php)|null [$connexion](#property-connexion) ;
     - protected string [$query](#property-query) ;
@@ -58,6 +59,13 @@ class <span class="pl-k">SimplePdoWrapper</span> implements [SimplePdoWrapperInt
 
 Properties
 =============
+
+- <span id="property-isSystemCall"><b>isSystemCall</b></span>
+
+    This property holds the isSystemCall for this instance.
+    See the [SimplePdoWrapper conception notes](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/pages/conception-notes.md) for more info.
+    
+    
 
 - <span id="property-defaultFetchStyle"><b>defaultFetchStyle</b></span>
 

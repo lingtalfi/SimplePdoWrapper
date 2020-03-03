@@ -1,6 +1,6 @@
 SimplePdoWrapper
 ================
-2019-02-04 -> 2020-02-13
+2019-02-04 -> 2020-03-03
 
 
 
@@ -966,6 +966,10 @@ Related
 History Log
 ------------------
 
+- 1.18.0 -- 2020-03-03
+
+    - add system call flag concept  
+    
 - 1.17.0 -- 2020-02-13
 
     - add MysqlInfoUtil->getReferencedByTables method  

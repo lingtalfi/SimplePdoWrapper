@@ -1,6 +1,6 @@
 SimplePdoWrapper, Conception notes
 ==============
-2019-02-04
+2019-02-04 -> 2020-03-03
 
 
 
@@ -106,5 +106,49 @@ In order to do that, we will use the reversedForeignKeys information, that this 
 
 
          
+
+
+
+The system call flag
+--------------
+2020-03-03
+
+
+As this tool evolved, in turns out it has been a central piece (as far as database) in the [Light framework](https://github.com/lingtalfi/Light).
+The light framework involves interaction between multiple plugins, and it seems like the "light community" has decided to hook into the following methods:
+
+- insert
+- replace
+- update
+- delete
+- fetch
+- fetchAll
+
+This happens inside of the [Light_Database](https://github.com/lingtalfi/Light_Database) plugin, which basically is the light version of this tool.
+
+By hooking with those methods, the plugins of the light ecosystem take decision, mainly permission based decisions.
+
+As to help light developers with knowing whence the call to the aforementioned methods come from, we provide a system call flag, which we 
+raise before we call our own methods in classes such as [MysqlInfoUtil](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/MysqlInfoUtil.md) for instance.
+
+
+This flag might be turned back down on a method-basis by the light tools, shall they want to use this information.
+
+In other words, we provide the systemCall flag as an extra bit of information, but if you want to use it, you need to turn it down after every call to the
+aforementioned methods.
+
+This flag is located in the [SimplePdoWrapper class](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapper.md),
+as the public static isSystemCall property. 
+
+
+
+
+
+
+
+
+
+
+
 
 
