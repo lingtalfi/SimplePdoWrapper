@@ -1,6 +1,6 @@
 SimplePdoWrapper
 ================
-2019-02-04 -> 2020-03-10
+2019-02-04 -> 2020-05-21
 
 
 
@@ -490,7 +490,7 @@ a($wrapper->getError()); // null
 
 The where conditions
 -------------------
-2020-02-06
+2020-02-06 -> 2020-05-21
 
 
 Both the **update** and the **delete** methods have a "where conditions" argument.
@@ -594,6 +594,42 @@ See the [Where class](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/
 
 Note: portion of sql generated from the **Where** object is always sql injection safe, as it uses pdo markers for all methods,
 including for each member of the the **in**/**not in** items. 
+ 
+ 
+ 
+#### Special operators
+
+In addition to the combination methods above, we have **special operators**, with which we can create AND/OR groups and parenthesis, so this is possible for instance:
+
+```php
+$where = Where::inst()
+    ->key("resource_identifier")
+    ->openingParenthesis()
+    ->equals($resource_identifier)->or()->likePost($resource_identifier . "-")
+    ->closingParenthesis()
+;
+
+```
+
+Note that in this specific case the parenthesis (call to **openingParenthesis** and **closingParenthesis**) are optional,
+but it's just to show you the possibilities.
+
+
+The available special operators are:
+
+- **openingParenthesis**: writes an opening parenthesis in the query
+- **closingParenthesis**: writes a closing parenthesis in the query
+- **or**: writes the **OR** keyword in the query
+- **and**: writes the **AND** keyword in the query
+- **op**: alias for openingParenthesis
+- **cp**: alias for closingParenthesis
+
+
+
+
+
+
+
  
 
 
@@ -966,6 +1002,10 @@ Related
 History Log
 ------------------
 
+- 1.20.0 -- 2020-05-21
+
+    - add Where special operators  
+    
 - 1.19.0 -- 2020-03-10
 
     - removed system call flag concept  
