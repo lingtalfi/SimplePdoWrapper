@@ -1053,6 +1053,10 @@ Related
 History Log
 ------------------
 
+- 1.23.0 -- 2020-06-02
+
+    - update SimplePdoWrapperQueryException now accepts markers 
+
 - 1.22.0 -- 2020-06-02
 
     - add SimplePdoWrapperQueryException->setMessage method 

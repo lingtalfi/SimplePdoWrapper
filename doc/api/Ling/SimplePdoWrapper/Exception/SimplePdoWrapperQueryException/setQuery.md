@@ -49,7 +49,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [SimplePdoWrapperQueryException::setQuery](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Exception/SimplePdoWrapperQueryException.php#L50-L53)
+See the source code for method [SimplePdoWrapperQueryException::setQuery](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Exception/SimplePdoWrapperQueryException.php#L45-L48)
 
 
 See Also

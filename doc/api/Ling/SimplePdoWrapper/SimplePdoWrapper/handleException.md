@@ -16,7 +16,7 @@ Description
 ================
 
 
-private [SimplePdoWrapper::handleException](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapper/handleException.md)([\Exception](http://php.net/manual/en/class.exception.php) $e) : void
+private [SimplePdoWrapper::handleException](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapper/handleException.md)([\Exception](http://php.net/manual/en/class.exception.php) $e, ?array $markers = []) : void
 
 
 
@@ -34,12 +34,21 @@ Parameters
 
     
 
+- markers
+
+    
+
 
 Return values
 ================
 
 Returns void.
 
+
+Exceptions thrown
+================
+
+- [Exception](http://php.net/manual/en/class.exception.php).&nbsp;
 
 
 
@@ -49,7 +58,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [SimplePdoWrapper::handleException](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/SimplePdoWrapper.php#L583-L588)
+See the source code for method [SimplePdoWrapper::handleException](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/SimplePdoWrapper.php#L585-L599)
 
 
 See Also

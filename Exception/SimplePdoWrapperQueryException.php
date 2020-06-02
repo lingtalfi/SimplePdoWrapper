@@ -4,7 +4,6 @@
 namespace Ling\SimplePdoWrapper\Exception;
 
 
-use Throwable;
 
 /**
  * The SimplePdoWrapperQueryException class.
@@ -18,18 +17,14 @@ class SimplePdoWrapperQueryException extends SimplePdoWrapperException
      */
     protected $query;
 
-
     /**
-     * Builds the SimplePdoWrapperQueryException instance.
-     *
-     * @param string $message
-     * @param int $code
-     * @param Throwable|null $previous
+     * This property holds the markers for this instance.
+     * @var array
      */
-    public function __construct($message = "", $code = 0, Throwable $previous = null)
-    {
-        parent::__construct($message, $code, $previous);
-    }
+    protected $markers;
+
+
+
 
 
     /**
@@ -59,4 +54,26 @@ class SimplePdoWrapperQueryException extends SimplePdoWrapperException
     public function setMessage(string $message){
         $this->message = $message;
     }
+
+    /**
+     * Returns the markers of this instance.
+     *
+     * @return array
+     */
+    public function getMarkers(): array
+    {
+        return $this->markers;
+    }
+
+    /**
+     * Sets the markers.
+     *
+     * @param array $markers
+     */
+    public function setMarkers(array $markers)
+    {
+        $this->markers = $markers;
+    }
+
+
 }
