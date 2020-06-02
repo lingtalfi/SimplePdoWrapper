@@ -254,7 +254,7 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
 
 
         try {
-            $res = $stmt->execute($markers);
+            $res = $stmt->execute($allMarkers);
         } catch (\Exception $e) {
             $res = null;
             $this->handleException($e, $allMarkers);

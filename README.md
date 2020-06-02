@@ -1053,6 +1053,10 @@ Related
 History Log
 ------------------
 
+- 1.23.1 -- 2020-06-02
+
+    - fix SimplePdoWrapper->update misspelled variable name 
+
 - 1.23.0 -- 2020-06-02
 
     - update SimplePdoWrapperQueryException now accepts markers 
