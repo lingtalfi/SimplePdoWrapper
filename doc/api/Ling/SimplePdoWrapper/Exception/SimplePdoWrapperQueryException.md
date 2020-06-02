@@ -37,6 +37,7 @@ class <span class="pl-k">SimplePdoWrapperQueryException</span> extends [SimplePd
     - public [__construct](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Exception/SimplePdoWrapperQueryException/__construct.md)(?$message = , ?$code = 0, ?[\Throwable](http://php.net/manual/en/class.throwable.php) $previous = null) : void
     - public [getQuery](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Exception/SimplePdoWrapperQueryException/getQuery.md)() : string
     - public [setQuery](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Exception/SimplePdoWrapperQueryException/setQuery.md)(string $query) : void
+    - public [setMessage](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Exception/SimplePdoWrapperQueryException/setMessage.md)(string $message) : void
 
 }
 
@@ -84,6 +85,7 @@ Methods
 - [SimplePdoWrapperQueryException::__construct](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Exception/SimplePdoWrapperQueryException/__construct.md) &ndash; Builds the SimplePdoWrapperQueryException instance.
 - [SimplePdoWrapperQueryException::getQuery](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Exception/SimplePdoWrapperQueryException/getQuery.md) &ndash; Returns the query of this instance.
 - [SimplePdoWrapperQueryException::setQuery](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Exception/SimplePdoWrapperQueryException/setQuery.md) &ndash; Sets the query.
+- [SimplePdoWrapperQueryException::setMessage](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Exception/SimplePdoWrapperQueryException/setMessage.md) &ndash; Sets the message for this exception.
 
 
 

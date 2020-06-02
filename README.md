@@ -1053,6 +1053,10 @@ Related
 History Log
 ------------------
 
+- 1.22.0 -- 2020-06-02
+
+    - add SimplePdoWrapperQueryException->setMessage method 
+    
 - 1.21.0 -- 2020-06-02
 
     - add SimplePdoWrapperQueryException concept 

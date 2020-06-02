@@ -51,4 +51,12 @@ class SimplePdoWrapperQueryException extends SimplePdoWrapperException
     {
         $this->query = $query;
     }
+
+    /**
+     * Sets the message for this exception.
+     * @param string $message
+     */
+    public function setMessage(string $message){
+        $this->message = $message;
+    }
 }
