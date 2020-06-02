@@ -1,6 +1,6 @@
 SimplePdoWrapper
 ================
-2019-02-04 -> 2020-05-21
+2019-02-04 -> 2020-06-02
 
 
 
@@ -31,10 +31,11 @@ Summary
 =================
 * [SimplePdoWrapper api](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper.md) (generated with [DocTools](https://github.com/lingtalfi/DocTools))
 * [Conception notes](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/pages/conception-notes.md)
-* [SimplePdoWrapper](#simplepdowrapper-1)
+* [SimplePdoWrapper](#simplepdowrapper-overview)
 * [Connexion](#connexion)
   * [Using mysql](#using-mysql)
   * [Using sqlite](#using-sqlite)
+* [SimplePdoWrapperQueryException](#the-simplepdowrapperqueryexception)
 * [Examples](#examples)
   * [Insert examples](#insert-examples)
      * [Insert (without error)](#insert-without-error)
@@ -73,7 +74,9 @@ Summary
 
 
 
-SimplePdoWrapper
+
+
+SimplePdoWrapper overview
 ================
 
 The SimplePdoWrapper tool provides a SimplePdoWrapperInterface object, which
@@ -225,6 +228,54 @@ try {
     die();
 }
 ```
+
+
+
+The SimplePdoWrapperQueryException
+===========
+2020-06-02
+
+
+For the following methods:
+
+- insert
+- replace
+- update
+- delete
+- fetchAll
+- fetch
+
+if your **pdo** configuration throws exceptions, then the SimplePdoWrapper will intercept them and rethrow a special exception: 
+the **SimplePdoWrapperQueryException**.
+
+This special exception has the same message and code as the original thrown exception, but has an extra **query** information
+that you can access using the **getQuery** method. 
+
+The problem it solves is that often, you get cryptic error messages such as this one for instance:
+
+```html
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') )' at line 1
+```
+
+which gives you a pointer to the error, but you don't know exactly what's going on.
+
+If we had the query information, debugging would be a breeze.
+
+For instance, in the example above, the query was:
+
+```sql 
+delete from luda_resource WHERE (`id` in () )
+```
+
+We now obviously see the problem in the query, an empty array has been passed.
+
+So, now because we throw a **SimplePdoWrapperQueryException** for the aforementioned method, you always have the option to access the query if you want to (for instance
+in development/debug mode, it can be good to show both the exception message AND the query).
+
+
+
+The idea behind this exception is that then you have 
+
 
 
 
@@ -1002,6 +1053,10 @@ Related
 History Log
 ------------------
 
+- 1.21.0 -- 2020-06-02
+
+    - add SimplePdoWrapperQueryException concept 
+     
 - 1.20.0 -- 2020-05-21
 
     - add Where special operators  
