@@ -314,6 +314,9 @@ EEE;
     {
         $types = [];
         $info = $this->wrapper->fetchAll("SHOW COLUMNS FROM `$table`");
+        if (false === $info) {
+            $this->error("Problem with the show columns query.");
+        }
 
         foreach ($info as $_info) {
             $type = $_info['Type'];
@@ -324,6 +327,29 @@ EEE;
         }
         return $types;
     }
+
+
+    /**
+     * Returns an array of columnName => isNullable (a boolean).
+     *
+     *
+     * @param $table
+     * @return array
+     * @throws \Exception
+     */
+    public function getColumnNullabilities($table): array
+    {
+        $defaults = [];
+        $info = $this->wrapper->fetchAll("SHOW COLUMNS FROM `$table`");
+        if (false === $info) {
+            $this->error("Problem with the show columns query.");
+        }
+        foreach ($info as $_info) {
+            $defaults[$_info['Field']] = ('YES' === $_info['Null']) ? true : false;
+        }
+        return $defaults;
+    }
+
 
     /**
      * Returns the name of the auto-incremented field, or false if there is none.
@@ -758,6 +784,18 @@ and CONSTRAINT_TYPE = 'FOREIGN KEY'
 
         return false;
 
+    }
+
+
+    /**
+     * Throws an exception.
+     *
+     * @param string $msg
+     * @throws \Exception
+     */
+    private function error(string $msg)
+    {
+        throw new MysqlInfoUtilException($msg);
     }
 
 }

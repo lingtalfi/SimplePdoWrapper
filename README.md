@@ -1053,6 +1053,10 @@ Related
 History Log
 ------------------
 
+- 1.25.0 -- 2020-06-11
+
+    - add MysqlInfoUtil->getColumnNullabilities 
+    
 - 1.24.0 -- 2020-06-11
 
     - add MysqlInfoUtil->getCreateStatement 
