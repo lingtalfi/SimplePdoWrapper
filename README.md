@@ -1053,6 +1053,10 @@ Related
 History Log
 ------------------
 
+- 1.26.1 -- 2020-06-11
+
+    - fix MysqlInfoUtil->getUniqueIndexesDetails functional typo 
+    
 - 1.26.0 -- 2020-06-11
 
     - add MysqlInfoUtil->getIndexesDetails 

@@ -315,7 +315,7 @@ EEE;
      */
     public function getUniqueIndexesDetails(string $table): array
     {
-        return $this->getIndexesDetails($table, ['unique', true]);
+        return $this->getIndexesDetails($table, ['unique' => true]);
     }
 
     /**
