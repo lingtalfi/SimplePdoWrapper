@@ -315,13 +315,53 @@ EEE;
      */
     public function getUniqueIndexesDetails(string $table): array
     {
+        return $this->getIndexesDetails($table, ['unique', true]);
+    }
+
+    /**
+     * Returns an information array about the regular indexes (i.e. not unique, and not the index for the primary key) of the given table.
+     *
+     * It's an array of indexName => indexDetails
+     * The indexDetails item are ordered by ascending index number.
+     * Each indexDetails item has the following structure:
+     *      - colName: the name of the column
+     *      - ascDesc: null | ASC | DESC, the direction of the index column.
+     *
+     *
+     *
+     * The available options are:
+     *
+     * - unique: bool=false. If true, the method returns info about the unique indexes only.
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+     * @param string $table
+     * @param array $options
+     * @return array
+     * @throws \Exception
+     */
+    public function getIndexesDetails(string $table, array $options = []): array
+    {
+
+        $unique = $options['unique'] ?? false;
+        if (true === $unique) {
+            $uniqueValue = "0";
+        } else {
+            $uniqueValue = "1";
+        }
+
         $ret = [];
         $info = $this->wrapper->fetchAll("SHOW INDEX FROM `$table`");
         if (false !== $info) {
             $indexes = [];
             foreach ($info as $_info) {
                 if (
-                    '0' === $_info['Non_unique'] &&
+                    $uniqueValue === $_info['Non_unique'] &&
                     'PRIMARY' !== $_info['Key_name']
                 ) {
                     $dir = $_info['Collation'];
