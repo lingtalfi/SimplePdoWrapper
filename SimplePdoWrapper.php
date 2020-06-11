@@ -273,7 +273,9 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
     public function delete($table, $whereConds = null, $markers = [])
     {
         $query = 'delete from ' . $table;
-        self::addWhereSubStmt($query, $markers, $whereConds);
+        if ($whereConds) {
+            self::addWhereSubStmt($query, $markers, $whereConds);
+        }
 
 
         // setup
@@ -582,7 +584,7 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
      * @param array $markers
      * @throws \Exception
      */
-    private function handleException(\Exception $e, array $markers=[])
+    private function handleException(\Exception $e, array $markers = [])
     {
         /**
          * Note: I couldn't pass the exception code, I had an error (I believe it's a bug, but no time to investigate):

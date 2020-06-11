@@ -1,6 +1,6 @@
 SimplePdoWrapper
 ================
-2019-02-04 -> 2020-06-02
+2019-02-04 -> 2020-06-11
 
 
 
@@ -1053,6 +1053,10 @@ Related
 History Log
 ------------------
 
+- 1.24.0 -- 2020-06-11
+
+    - add MysqlInfoUtil->getCreateStatement 
+    
 - 1.23.1 -- 2020-06-02
 
     - fix SimplePdoWrapper->update misspelled variable name 

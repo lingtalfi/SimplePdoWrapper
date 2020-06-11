@@ -5,7 +5,7 @@ namespace Ling\SimplePdoWrapper\Util;
 
 
 use Ling\SimplePdoWrapper\Exception\MysqlInfoUtilException;
-use Ling\SimplePdoWrapper\SimplePdoWrapper;
+use Ling\SimplePdoWrapper\Exception\SimplePdoWrapperException;
 use Ling\SimplePdoWrapper\SimplePdoWrapperInterface;
 
 /**
@@ -183,6 +183,23 @@ EEE;
         return $ret;
     }
 
+
+    /**
+     * Returns the create statement for the given table.
+     *
+     * @param string $table
+     * @return string
+     * @throws \Exception
+     */
+    public function getCreateStatement(string $table): string
+    {
+
+        $row = $this->wrapper->fetch("SHOW CREATE TABLE `$table`");
+        if (false !== $row) {
+            return $row['Create Table'];
+        }
+        throw new SimplePdoWrapperException("Could not get the create statement for table $table.");
+    }
 
     /**
      * Returns the array of columns composing the primary key.
