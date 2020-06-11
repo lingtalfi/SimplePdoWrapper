@@ -298,6 +298,66 @@ EEE;
 
 
     /**
+     * Returns an information array about the unique indexes of the given table.
+     * It's an array of indexName => indexDetails
+     * The indexDetails item are ordered by ascending index number.
+     * Each indexDetails item has the following structure:
+     *      - colName: the name of the column
+     *      - ascDesc: null | ASC | DESC, the direction of the unique index column.
+     *
+     *
+     *
+     *
+     *
+     * @param string $table
+     * @return array
+     * @throws \Exception
+     */
+    public function getUniqueIndexesDetails(string $table): array
+    {
+        $ret = [];
+        $info = $this->wrapper->fetchAll("SHOW INDEX FROM `$table`");
+        if (false !== $info) {
+            $indexes = [];
+            foreach ($info as $_info) {
+                if (
+                    '0' === $_info['Non_unique'] &&
+                    'PRIMARY' !== $_info['Key_name']
+                ) {
+                    $dir = $_info['Collation'];
+                    if (null === $dir || 'NULL' === $dir) { // which one is it?
+                        $dir = null;
+                    } else {
+                        switch ($dir) {
+                            case "A":
+                                $dir = 'ASC';
+                                break;
+                            case "D":
+                                $dir = 'DESC';
+                                break;
+                            default:
+                                $this->error("Unknown collation case with \"$dir\".");
+                                break;
+                        }
+                    }
+
+
+                    $indexes[$_info['Key_name']][$_info['Seq_in_index']] = [
+                        'colName' => $_info['Column_name'],
+                        'ascDesc' => $dir,
+                    ];
+                }
+            }
+            foreach ($indexes as $name => $keys) {
+                $keys = array_merge($keys);
+                $ret[$name] = $keys;
+            };
+        }
+        return $ret;
+    }
+
+
+    /**
      * Returns an array of columnName => type.
      *
      * The type is the string returned by mysql (such as int(11) or varchar(128) for instance).
