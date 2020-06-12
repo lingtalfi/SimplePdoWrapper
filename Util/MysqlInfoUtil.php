@@ -318,6 +318,9 @@ EEE;
         return $this->getIndexesDetails($table, ['unique' => true]);
     }
 
+
+
+
     /**
      * Returns an information array about the regular indexes (i.e. not unique, and not the index for the primary key) of the given table.
      *
@@ -332,11 +335,6 @@ EEE;
      * The available options are:
      *
      * - unique: bool=false. If true, the method returns info about the unique indexes only.
-     *
-     *
-     *
-     *
-     *
      *
      *
      *
@@ -501,22 +499,6 @@ and CONSTRAINT_TYPE = 'FOREIGN KEY'
                 $ret[$row['COLUMN_NAME']] = [$row['REFERENCED_TABLE_SCHEMA'], $row['REFERENCED_TABLE_NAME'], $row['REFERENCED_COLUMN_NAME']];
             }
         }
-
-
-//        if (true === $resolve) {
-//            foreach ($ret as $col => $info) {
-//                $db = $info[0];
-//                $table = $info[1];
-//                $column = $info[2];
-//                $this->getResolvedForeignKeyInfo($db, $table, $column);
-//                $ret[$col] = [
-//                    $db,
-//                    $table,
-//                    $column,
-//                ];
-//            }
-//        }
-
         return $ret;
     }
 
@@ -530,13 +512,20 @@ and CONSTRAINT_TYPE = 'FOREIGN KEY'
      * - tableId: string, the full table name, using the notation $db.$table
      * - referencedByTableIds: array of referencedByTableId items, each of which being a full table name using the notation $db.$table.
      *
+     * Available options are:
+     *
+     * - useDbPrefix: bool=true. Whether to prefix the table names with the database name.
+     *
+     *
      *
      * @param array|null $databases
+     * @param array $options
      * @return array
      * @throws \Exception
      */
-    public function getReverseForeignKeyMap(array $databases = null): array
+    public function getReverseForeignKeyMap(array $databases = null, array $options = []): array
     {
+        $useDbPrefix = $options['useDbPrefix'] ?? true;
         $currentDb = $this->getDatabase();
         if (null === $databases) {
             $databases = [$currentDb];
@@ -549,7 +538,11 @@ and CONSTRAINT_TYPE = 'FOREIGN KEY'
                 $fks = $this->getForeignKeysInfo($database . "." . $table);
                 foreach ($fks as $col => $fkInfo) {
                     list($fdb, $ftable, $fcol) = $fkInfo;
-                    $ret["$fdb.$ftable"][] = "$database.$table";
+                    if (true === $useDbPrefix) {
+                        $ret["$fdb.$ftable"][] = "$database.$table";
+                    } else {
+                        $ret[$ftable][] = $table;
+                    }
                 }
             }
         }

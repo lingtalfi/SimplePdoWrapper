@@ -1,6 +1,6 @@
 SimplePdoWrapper
 ================
-2019-02-04 -> 2020-06-11
+2019-02-04 -> 2020-06-12
 
 
 
@@ -1053,6 +1053,10 @@ Related
 History Log
 ------------------
 
+- 1.27.0 -- 2020-06-12
+
+    - update MysqlInfoUtil->getReverseForeignKeyMap add options parameter 
+    
 - 1.26.1 -- 2020-06-11
 
     - fix MysqlInfoUtil->getUniqueIndexesDetails functional typo 
