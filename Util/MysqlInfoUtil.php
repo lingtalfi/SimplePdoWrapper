@@ -185,6 +185,23 @@ EEE;
 
 
     /**
+     * Returns the engine used for the given table.
+     *
+     *
+     * @param string $table
+     * @return string
+     */
+    public function getEngine(string $table): string
+    {
+        list($db, $table) = $this->splitTableName($table);
+        $row = $this->wrapper->fetch("SHOW TABLE STATUS FROM `$db` WHERE Name='$table'");
+        if (false !== $row) {
+            return $row['Engine'];
+        }
+        throw new SimplePdoWrapperException("Could not get the create statement for table $table.");
+    }
+
+    /**
      * Returns the create statement for the given table.
      *
      * @param string $table
@@ -317,8 +334,6 @@ EEE;
     {
         return $this->getIndexesDetails($table, ['unique' => true]);
     }
-
-
 
 
     /**
