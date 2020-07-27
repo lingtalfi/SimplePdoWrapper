@@ -1055,6 +1055,10 @@ Related
 History Log
 ------------------
 
+- 1.30.1 -- 2020-07-27
+
+    - update OrderBy->apply, now escapes the column names with backticks 
+    
 - 1.30.0 -- 2020-07-27
 
     - add Columns->getColumns method 

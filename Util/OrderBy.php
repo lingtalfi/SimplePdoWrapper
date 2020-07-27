@@ -84,7 +84,7 @@ class OrderBy
                 $query .= ', ';
             }
             list($col, $dir) = $colDir;
-            $query .= $col . ' ' . $dir;
+            $query .= '`' . $col . '` ' . $dir;
             $n = true;
         }
     }
