@@ -30,7 +30,9 @@ Or just download it and place it where you want otherwise.
 Summary
 =================
 * [SimplePdoWrapper api](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper.md) (generated with [DocTools](https://github.com/lingtalfi/DocTools))
-* [Conception notes](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/pages/conception-notes.md)
+* Pages
+    * [Conception notes](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/pages/conception-notes.md)
+    * [Fetch all components](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/pages/fetch-all-components.md)
 * [SimplePdoWrapper](#simplepdowrapper-overview)
 * [Connexion](#connexion)
   * [Using mysql](#using-mysql)
@@ -1053,6 +1055,10 @@ Related
 History Log
 ------------------
 
+- 1.29.1 -- 2020-07-27
+
+    - add "fetch all components" page 
+    
 - 1.29.0 -- 2020-07-27
 
     - add OrderBy, Limit and Columns utils 
