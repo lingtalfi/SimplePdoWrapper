@@ -384,6 +384,7 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
         // setup
         $pdo = $this->boot();
         $this->query = $query;
+
         $this->storeQueryObject($pdo);
         if (false !== $r = $pdo->exec($query)) {
             return $r;

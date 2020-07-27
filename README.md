@@ -1,6 +1,6 @@
 SimplePdoWrapper
 ================
-2019-02-04 -> 2020-06-19
+2019-02-04 -> 2020-07-27
 
 
 
@@ -1053,6 +1053,11 @@ Related
 History Log
 ------------------
 
+- 1.29.0 -- 2020-07-27
+
+    - add OrderBy, Limit and Columns utils 
+    - fix Where->isNull not applied to the request correctly 
+    
 - 1.28.0 -- 2020-06-19
 
     - add MysqlInfoUtil->getEngine method 
