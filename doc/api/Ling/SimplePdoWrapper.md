@@ -51,6 +51,7 @@ Table of contents
     - [Columns::inst](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Columns/inst.md) &ndash; Creates a new instance and returns it.
     - [Columns::set](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Columns/set.md) &ndash; Sets the columns, and returns itself for chaining.
     - [Columns::singleColumn](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Columns/singleColumn.md) &ndash; Sets the mode to singleColumn, and returns itself for chaining.
+    - [Columns::getColumns](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Columns/getColumns.md) &ndash; Returns the columns of this instance.
     - [Columns::apply](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Columns/apply.md) &ndash; Appends the relevant sql to the given query, and returns itself for chaining.
     - [Columns::getMode](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Columns/getMode.md) &ndash; Returns the mode of this instance.
 - [Limit](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Limit.md) &ndash; The Limit class.

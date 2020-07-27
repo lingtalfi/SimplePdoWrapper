@@ -33,6 +33,7 @@ class <span class="pl-k">Columns</span>  {
     - public static [inst](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Columns/inst.md)() : static
     - public [set](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Columns/set.md)($columns) : [Columns](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Columns.md)
     - public [singleColumn](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Columns/singleColumn.md)() : [Columns](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Columns.md)
+    - public [getColumns](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Columns/getColumns.md)() : array
     - public [apply](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Columns/apply.md)(string &$query) : void
     - public [getMode](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Columns/getMode.md)() : string
 
@@ -73,6 +74,7 @@ Methods
 - [Columns::inst](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Columns/inst.md) &ndash; Creates a new instance and returns it.
 - [Columns::set](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Columns/set.md) &ndash; Sets the columns, and returns itself for chaining.
 - [Columns::singleColumn](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Columns/singleColumn.md) &ndash; Sets the mode to singleColumn, and returns itself for chaining.
+- [Columns::getColumns](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Columns/getColumns.md) &ndash; Returns the columns of this instance.
 - [Columns::apply](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Columns/apply.md) &ndash; Appends the relevant sql to the given query, and returns itself for chaining.
 - [Columns::getMode](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Columns/getMode.md) &ndash; Returns the mode of this instance.
 

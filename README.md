@@ -1055,6 +1055,10 @@ Related
 History Log
 ------------------
 
+- 1.30.0 -- 2020-07-27
+
+    - add Columns->getColumns method 
+    
 - 1.29.1 -- 2020-07-27
 
     - add "fetch all components" page 

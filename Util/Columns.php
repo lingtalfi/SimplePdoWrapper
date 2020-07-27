@@ -89,6 +89,18 @@ class Columns
         return $this;
     }
 
+    /**
+     * Returns the columns of this instance.
+     *
+     * @return array
+     */
+    public function getColumns(): array
+    {
+        return $this->columns;
+    }
+
+
+
 
 
 

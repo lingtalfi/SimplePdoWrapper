@@ -49,7 +49,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [Columns::apply](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/Columns.php#L104-L108)
+See the source code for method [Columns::apply](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/Columns.php#L116-L120)
 
 
 See Also
@@ -57,5 +57,5 @@ See Also
 
 The [Columns](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Columns.md) class.
 
-Previous method: [singleColumn](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Columns/singleColumn.md)<br>Next method: [getMode](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Columns/getMode.md)<br>
+Previous method: [getColumns](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Columns/getColumns.md)<br>Next method: [getMode](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Columns/getMode.md)<br>
 

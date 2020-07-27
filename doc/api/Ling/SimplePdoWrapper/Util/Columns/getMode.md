@@ -46,7 +46,7 @@ Returns string.
 
 Source Code
 ===========
-See the source code for method [Columns::getMode](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/Columns.php#L115-L118)
+See the source code for method [Columns::getMode](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/Util/Columns.php#L127-L130)
 
 
 See Also
