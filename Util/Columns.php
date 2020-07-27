@@ -43,7 +43,7 @@ class Columns
     public function __construct()
     {
         $this->columns = [];
-        $this->mode = null;
+        $this->mode = 'default';
     }
 
 

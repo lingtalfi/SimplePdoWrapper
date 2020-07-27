@@ -1055,6 +1055,10 @@ Related
 History Log
 ------------------
 
+- 1.30.2 -- 2020-07-27
+
+    - fix functional bug, Columns->getMode returning null instead of "default" 
+    
 - 1.30.1 -- 2020-07-27
 
     - update OrderBy->apply, now escapes the column names with backticks 
