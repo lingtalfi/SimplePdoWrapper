@@ -1,6 +1,6 @@
 SimplePdoWrapper
 ================
-2019-02-04 -> 2020-07-27
+2019-02-04 -> 2020-08-31
 
 
 
@@ -1055,6 +1055,10 @@ Related
 History Log
 ------------------
 
+- 1.30.3 -- 2020-08-31
+
+    - fix SimplePdoWrapperQueryException not having the code set 
+    
 - 1.30.2 -- 2020-07-27
 
     - fix functional bug, Columns->getMode returning null instead of "default" 

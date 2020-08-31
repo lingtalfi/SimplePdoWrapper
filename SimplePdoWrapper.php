@@ -587,15 +587,11 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
      */
     private function handleException(\Exception $e, array $markers = [])
     {
-        /**
-         * Note: I couldn't pass the exception code, I had an error (I believe it's a bug, but no time to investigate):
-         * Fatal error: Uncaught Error: Wrong parameters for Ling\SimplePdoWrapper\Exception\SimplePdoWrapperQueryException([string $message [, long $code [, Throwable $previous = NULL]]])
-         * It probably expects an int, but the PDO exception's code is a string.
-         * https://www.php.net/manual/en/exception.getcode.php
-         *
-         */
-//        $ex = new SimplePdoWrapperQueryException($e->getMessage(), $e->getCode(), $e);
-        $ex = new SimplePdoWrapperQueryException($e->getMessage(), null, $e);
+        $code = $e->getCode();
+        if (null !== $code) {
+            $code = (string)$code;
+        }
+        $ex = new SimplePdoWrapperQueryException($e->getMessage(), $code, $e);
         $ex->setQuery($this->query);
         $ex->setMarkers($markers);
         throw $ex;
