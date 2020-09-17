@@ -63,7 +63,8 @@ interface SimplePdoWrapperInterface
      * Executes the insert statement and returns the lastInsertId.
      * See more info in the class description.
      *
-     * Options: not used at the moment.
+     * Available options are:
+     * - ignore: bool=false, whether to use the ignore keyword
      *
      *
      *

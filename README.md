@@ -1,6 +1,6 @@
 SimplePdoWrapper
 ================
-2019-02-04 -> 2020-08-31
+2019-02-04 -> 2020-09-17
 
 
 
@@ -1055,6 +1055,10 @@ Related
 History Log
 ------------------
 
+- 1.30.4 -- 2020-09-17
+
+    - update SimplePdoWrapperInterface->insert, add ignore option 
+    
 - 1.30.3 -- 2020-08-31
 
     - fix SimplePdoWrapperQueryException not having the code set 

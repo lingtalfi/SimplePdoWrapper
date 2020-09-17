@@ -158,8 +158,14 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
     {
 
 
+        $ignore = $options['ignore'] ?? false;
+
         // preparing the query
-        $query = 'insert into ' . $table . ' ';
+        $query = 'insert';
+        if (true === $ignore) {
+            $query .= " ignore";
+        }
+        $query .= ' ' . $table . ' ';
         $markers = [];
         self::addAssignmentListSubStmt($query, $markers, $fields, true);
 
