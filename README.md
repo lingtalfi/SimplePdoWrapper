@@ -1,6 +1,6 @@
 SimplePdoWrapper
 ================
-2019-02-04 -> 2020-09-17
+2019-02-04 -> 2020-10-16
 
 
 
@@ -1055,6 +1055,10 @@ Related
 History Log
 ------------------
 
+- 1.30.5 -- 2020-10-16
+
+    - add SimplePdoSpecialExpressionHelper::unserializeGroupConcatSeparator method 
+    
 - 1.30.4 -- 2020-09-17
 
     - update SimplePdoWrapperInterface->insert, add ignore option 
