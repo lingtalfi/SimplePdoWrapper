@@ -1,6 +1,6 @@
 SimplePdoWrapper
 ================
-2019-02-04 -> 2020-10-16
+2019-02-04 -> 2020-10-19
 
 
 
@@ -1055,6 +1055,10 @@ Related
 History Log
 ------------------
 
+- 1.30.6 -- 2020-10-19
+
+    - add SimplePdoGenericHelper class 
+    
 - 1.30.5 -- 2020-10-16
 
     - add SimplePdoSpecialExpressionHelper::unserializeGroupConcatSeparator method 

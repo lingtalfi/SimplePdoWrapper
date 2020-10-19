@@ -4,7 +4,7 @@
 
 The RicHelper class
 ================
-2019-07-22 --> 2020-10-16
+2019-07-22 --> 2020-10-19
 
 
 
@@ -54,4 +54,4 @@ See the source code of [Ling\SimplePdoWrapper\Util\RicHelper](https://github.com
 
 SeeAlso
 ==============
-Previous class: [OrderBy](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/OrderBy.md)<br>Next class: [SimplePdoSpecialExpressionHelper](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/SimplePdoSpecialExpressionHelper.md)<br>
+Previous class: [OrderBy](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/OrderBy.md)<br>Next class: [SimplePdoGenericHelper](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/SimplePdoGenericHelper.md)<br>
