@@ -1,6 +1,6 @@
 SimplePdoWrapper
 ================
-2019-02-04 -> 2020-10-19
+2019-02-04 -> 2020-10-30
 
 
 
@@ -1055,6 +1055,10 @@ Related
 History Log
 ------------------
 
+- 1.30.7 -- 2020-10-30
+
+    - fix SimplePdoWrapper->handleException, code not being an int triggers fatal error 
+    
 - 1.30.6 -- 2020-10-19
 
     - add SimplePdoGenericHelper class 

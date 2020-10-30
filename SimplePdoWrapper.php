@@ -594,9 +594,10 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
     private function handleException(\Exception $e, array $markers = [])
     {
         $code = $e->getCode();
-        if (null !== $code) {
-            $code = (string)$code;
-        }
+        /**
+         * php exception code has to be an int, otherwise it's a fatal error.
+         */
+        $code = (int)$code;
         $ex = new SimplePdoWrapperQueryException($e->getMessage(), $code, $e);
         $ex->setQuery($this->query);
         $ex->setMarkers($markers);
