@@ -66,7 +66,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [SimplePdoWrapper::delete](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/SimplePdoWrapper.php#L279-L309)
+See the source code for method [SimplePdoWrapper::delete](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/SimplePdoWrapper.php#L287-L318)
 
 
 See Also

@@ -58,7 +58,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [SimplePdoWrapper::handleException](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/SimplePdoWrapper.php#L594-L605)
+See the source code for method [SimplePdoWrapper::handleException](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/SimplePdoWrapper.php#L650-L661)
 
 
 See Also
@@ -66,5 +66,5 @@ See Also
 
 The [SimplePdoWrapper](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapper.md) class.
 
-Previous method: [addAssignmentListSubStmt](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapper/addAssignmentListSubStmt.md)<br>
+Previous method: [queryLog](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapper/queryLog.md)<br>
 

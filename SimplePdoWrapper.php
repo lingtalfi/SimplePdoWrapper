@@ -125,15 +125,19 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
             $this->setErrorMode(\PDO::ERRMODE_EXCEPTION);
 
             try {
+                $this->queryLog("transactionBegin");
                 $pdo->beginTransaction();
                 $this->transactionActive = true;
                 call_user_func($transactionCallback);
+                $this->queryLog("transactionCommit");
                 $pdo->commit();
             } catch (\Exception $e) {
+                $this->queryLog("transactionRollback");
                 $pdo->rollBack();
                 $exception = $e;
                 $hasError = true;
             }
+            $this->queryLog("transactionEnd");
             $this->setErrorMode($currentErrorMode);
 
         } else {
@@ -175,6 +179,8 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
 
 
         // executing the request
+
+        $this->queryLog("insert", $table, $query, $fields, $options);
         $stmt = $pdo->prepare($query);
         $this->storeQueryObject($stmt);
 
@@ -216,6 +222,7 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
 
 
         // executing the request
+        $this->queryLog("replace", $table, $query, $fields, $options);
         $stmt = $pdo->prepare($query);
         $this->storeQueryObject($stmt);
 
@@ -255,6 +262,7 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
         $this->query = $query;
 
 
+        $this->queryLog("update", $table, $query, $fields, $whereConds, $markers);
         $stmt = $pdo->prepare($query);
         $this->storeQueryObject($stmt);
 
@@ -288,6 +296,7 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
         $pdo = $this->boot();
         $this->query = $query;
 
+        $this->queryLog("delete", $table, $query, $whereConds, $markers);
         $stmt = $pdo->prepare($query);
         $this->storeQueryObject($stmt);
 
@@ -322,6 +331,7 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
         $this->query = $query;
 
 
+        $this->queryLog("fetch", $query, $markers, $fetchStyle);
         $stmt = $pdo->prepare($query);
         $this->storeQueryObject($stmt);
 
@@ -355,6 +365,7 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
         $this->query = $query;
 
 
+        $this->queryLog("fetchAll", $query, $markers, $fetchStyle, $fetchArg, $ctorArgs);
         $stmt = $pdo->prepare($query);
         $this->storeQueryObject($stmt);
 
@@ -391,6 +402,7 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
         $pdo = $this->boot();
         $this->query = $query;
 
+        $this->queryLog("execute", $query);
         $this->storeQueryObject($pdo);
         if (false !== $r = $pdo->exec($query)) {
             return $r;
@@ -578,6 +590,50 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
             $stmt .= ')';
         }
     }
+
+
+    /**
+     * Hook for children classes.
+     *
+     * It logs the calls to our different methods BEFORE they are executed.
+     *
+     *
+     * The type can be one of:
+     * - transactionBegin: indicates a call to the pdo->beginTransaction method
+     * - transactionCommit: indicates a call to the pdo->commit method
+     * - transactionEnd: indicates when a transaction ends (after either a commit or a rollback)
+     * - transactionRollback: indicates when a call to the pdo->rollback method
+     * - insert: indicates when a call to our insert method
+     * - replace: indicates when a call to our replace method
+     * - update: indicates when a call to our update method
+     * - delete: indicates when a call to our delete method
+     * - fetch: indicates when a call to our fetch method
+     * - fetchAll: indicates when a call to our fetchAll method
+     * - execute: indicates when a call to our executeStatement method
+     *
+     * The rest of the arguments depends on the type.
+     * Only the following types have arguments (see the source code for more details):
+     *
+     * - insert: $table, $query, $fields, $options
+     * - replace: $table, $query, $fields, $options
+     * - update: $table, $query, $fields, $whereConds, $markers
+     * - delete: $table, $query, $whereConds, $markers
+     * - fetch: $query, $markers, $fetchStyle
+     * - fetchAll: $markers, $fetchStyle, $fetchArg, $ctorArgs
+     * - execute: $query
+     *
+     *
+     *
+     * @param string $type
+     * @param mixed ...$args
+     */
+    protected function queryLog(string $type, ...$args)
+    {
+
+    }
+
+
+
 
 
     //--------------------------------------------

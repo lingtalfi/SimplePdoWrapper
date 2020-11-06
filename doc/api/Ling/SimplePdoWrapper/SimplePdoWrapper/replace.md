@@ -70,7 +70,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [SimplePdoWrapper::replace](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/SimplePdoWrapper.php#L201-L235)
+See the source code for method [SimplePdoWrapper::replace](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/SimplePdoWrapper.php#L207-L242)
 
 
 See Also

@@ -77,7 +77,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [SimplePdoWrapper::fetchAll](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/SimplePdoWrapper.php#L347-L381)
+See the source code for method [SimplePdoWrapper::fetchAll](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/SimplePdoWrapper.php#L357-L392)
 
 
 See Also

@@ -52,7 +52,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [SimplePdoWrapper::boot](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/SimplePdoWrapper.php#L470-L474)
+See the source code for method [SimplePdoWrapper::boot](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/SimplePdoWrapper.php#L482-L486)
 
 
 See Also
