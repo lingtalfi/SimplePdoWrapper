@@ -1055,6 +1055,10 @@ Related
 History Log
 ------------------
 
+- 1.30.9 -- 2020-11-06
+
+    - update SimplePdoWrapper->queryLog signature 
+
 - 1.30.8 -- 2020-11-06
 
     - update SimplePdoWrapper, add queryLog method 

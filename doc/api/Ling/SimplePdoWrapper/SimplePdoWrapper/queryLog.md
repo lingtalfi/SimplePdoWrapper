@@ -42,10 +42,10 @@ The type can be one of:
 The rest of the arguments depends on the type.
 Only the following types have arguments (see the source code for more details):
 
-- insert: $table, $query, $fields, $options
-- replace: $table, $query, $fields, $options
-- update: $table, $query, $fields, $whereConds, $markers
-- delete: $table, $query, $whereConds, $markers
+- insert: $table, $query, $markers, $fields, $options
+- replace: $table, $query, $markers, $fields, $options
+- update: $table, $query, $markers, $fields, $whereConds
+- delete: $table, $query, $markers, $whereConds
 - fetch: $query, $markers, $fetchStyle
 - fetchAll: $markers, $fetchStyle, $fetchArg, $ctorArgs
 - execute: $query

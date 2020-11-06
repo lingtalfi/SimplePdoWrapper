@@ -180,7 +180,7 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
 
         // executing the request
 
-        $this->queryLog("insert", $table, $query, $fields, $options);
+        $this->queryLog("insert", $table, $query, $markers, $fields, $options);
         $stmt = $pdo->prepare($query);
         $this->storeQueryObject($stmt);
 
@@ -222,7 +222,7 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
 
 
         // executing the request
-        $this->queryLog("replace", $table, $query, $fields, $options);
+        $this->queryLog("replace", $table, $query, $markers, $fields, $options);
         $stmt = $pdo->prepare($query);
         $this->storeQueryObject($stmt);
 
@@ -262,7 +262,7 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
         $this->query = $query;
 
 
-        $this->queryLog("update", $table, $query, $fields, $whereConds, $markers);
+        $this->queryLog("update", $table, $query, $markers, $fields, $whereConds);
         $stmt = $pdo->prepare($query);
         $this->storeQueryObject($stmt);
 
@@ -296,7 +296,7 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
         $pdo = $this->boot();
         $this->query = $query;
 
-        $this->queryLog("delete", $table, $query, $whereConds, $markers);
+        $this->queryLog("delete", $table, $query, $markers, $whereConds);
         $stmt = $pdo->prepare($query);
         $this->storeQueryObject($stmt);
 
@@ -614,10 +614,10 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
      * The rest of the arguments depends on the type.
      * Only the following types have arguments (see the source code for more details):
      *
-     * - insert: $table, $query, $fields, $options
-     * - replace: $table, $query, $fields, $options
-     * - update: $table, $query, $fields, $whereConds, $markers
-     * - delete: $table, $query, $whereConds, $markers
+     * - insert: $table, $query, $markers, $fields, $options
+     * - replace: $table, $query, $markers, $fields, $options
+     * - update: $table, $query, $markers, $fields, $whereConds
+     * - delete: $table, $query, $markers, $whereConds
      * - fetch: $query, $markers, $fetchStyle
      * - fetchAll: $markers, $fetchStyle, $fetchArg, $ctorArgs
      * - execute: $query
