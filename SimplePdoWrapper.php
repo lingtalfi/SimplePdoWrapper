@@ -113,7 +113,7 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
     /**
      * @implementation
      */
-    public function transaction(callable $transactionCallback, \Exception &$e = null)
+    public function transaction(callable $transactionCallback, \Exception &$e = null): bool
     {
         $hasError = false;
 
@@ -133,6 +133,7 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
                 $pdo->commit();
             } catch (\Exception $e) {
                 $this->queryLog("transactionRollback");
+                $this->queryLog("exception", $e);
                 $pdo->rollBack();
                 $exception = $e;
                 $hasError = true;
@@ -144,6 +145,7 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
             try {
                 call_user_func($transactionCallback);
             } catch (\Exception $e) {
+                $this->queryLog("exception", $e);
                 $exception = $e;
                 $hasError = true;
             }
@@ -610,6 +612,9 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
      * - fetch: indicates when a call to our fetch method
      * - fetchAll: indicates when a call to our fetchAll method
      * - execute: indicates when a call to our executeStatement method
+     * - exception: indicates that an exception was caught from either a transaction, or a call to one of those methods:
+     *      insert, replace, update, delete, fetch, fetchAll, execute.
+     *
      *
      * The rest of the arguments depends on the type.
      * Only the following types have arguments (see the source code for more details):
@@ -621,6 +626,7 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
      * - fetch: $query, $markers, $fetchStyle
      * - fetchAll: $markers, $fetchStyle, $fetchArg, $ctorArgs
      * - execute: $query
+     * - exception: $exception (the Exception instance)
      *
      *
      *
@@ -649,6 +655,9 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
      */
     private function handleException(\Exception $e, array $markers = [])
     {
+
+        $this->queryLog("exception", $e);
+
         $code = $e->getCode();
         /**
          * php exception code has to be an int, otherwise it's a fatal error.

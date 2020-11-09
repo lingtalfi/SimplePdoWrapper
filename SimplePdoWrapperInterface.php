@@ -199,7 +199,7 @@ interface SimplePdoWrapperInterface
      * @throws NoPdoConnectionException
      * When the connexion is not set
      */
-    public function transaction(callable $transactionCallback, \Exception &$e = null);
+    public function transaction(callable $transactionCallback, \Exception &$e = null): bool;
 
 
     /**

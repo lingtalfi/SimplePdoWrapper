@@ -1,6 +1,6 @@
 SimplePdoWrapper
 ================
-2019-02-04 -> 2020-11-06
+2019-02-04 -> 2020-11-09
 
 
 
@@ -1055,6 +1055,10 @@ Related
 History Log
 ------------------
 
+- 1.30.10 -- 2020-11-09
+
+    - update SimplePdoWrapperInterface->transaction signature, now returns bool 
+    
 - 1.30.9 -- 2020-11-06
 
     - update SimplePdoWrapper->queryLog signature 
