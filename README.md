@@ -1,6 +1,6 @@
 SimplePdoWrapper
 ================
-2019-02-04 -> 2020-11-09
+2019-02-04 -> 2020-11-10
 
 
 
@@ -1055,6 +1055,10 @@ Related
 History Log
 ------------------
 
+- 1.30.11 -- 2020-11-10
+
+    - update MysqlInfoUtil, add getPotentialTablePrefixes method 
+    
 - 1.30.10 -- 2020-11-09
 
     - update SimplePdoWrapperInterface->transaction signature, now returns bool 
