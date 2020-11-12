@@ -4,7 +4,7 @@
 
 The SimplePdoWrapper class
 ================
-2019-07-22 --> 2020-11-10
+2019-07-22 --> 2020-11-12
 
 
 
@@ -132,4 +132,4 @@ See the source code of [Ling\SimplePdoWrapper\SimplePdoWrapper](https://github.c
 
 SeeAlso
 ==============
-Previous class: [SimplePdoWrapperQueryException](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Exception/SimplePdoWrapperQueryException.md)<br>Next class: [SimplePdoWrapperInterface](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapperInterface.md)<br>
+Previous class: [FetchAllComponentsHelper](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Helper/FetchAllComponentsHelper.md)<br>Next class: [SimplePdoWrapperInterface](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapperInterface.md)<br>

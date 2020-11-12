@@ -1,6 +1,6 @@
 Ling/SimplePdoWrapper
 ================
-2019-07-22 --> 2020-11-10
+2019-07-22 --> 2020-11-12
 
 
 
@@ -18,6 +18,8 @@ Table of contents
     - [SimplePdoWrapperQueryException::setMessage](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Exception/SimplePdoWrapperQueryException/setMessage.md) &ndash; Sets the message for this exception.
     - [SimplePdoWrapperQueryException::getMarkers](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Exception/SimplePdoWrapperQueryException/getMarkers.md) &ndash; Returns the markers of this instance.
     - [SimplePdoWrapperQueryException::setMarkers](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Exception/SimplePdoWrapperQueryException/setMarkers.md) &ndash; Sets the markers.
+- [FetchAllComponentsHelper](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Helper/FetchAllComponentsHelper.md) &ndash; The FetchAllComponentsHelper class.
+    - [FetchAllComponentsHelper::mergeWhereByComponents](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Helper/FetchAllComponentsHelper/mergeWhereByComponents.md) &ndash; Parses the given components array, and if one of them is a Where component, merges it with the given Where instance.
 - [SimplePdoWrapper](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapper.md) &ndash; The SimplePdoWrapper is a base class implementing the non-driver-specific methods of the SimplePdoWrapperInterface interface.
     - [SimplePdoWrapper::__construct](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapper/__construct.md) &ndash; Builds the concrete instance.
     - [SimplePdoWrapper::setConnexion](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapper/setConnexion.md) &ndash; Sets the pdo connexion.
@@ -105,6 +107,7 @@ Table of contents
     - [Where::__construct](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/__construct.md) &ndash; Builds the Where instance.
     - [Where::inst](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/inst.md) &ndash; Creates a new instance and returns it.
     - [Where::key](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/key.md) &ndash; Sets the current key and return this instance for chaining.
+    - [Where::merge](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/merge.md) &ndash; Merges the given Where component into the current one.
     - [Where::equals](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/equals.md) &ndash; Proxy to the operator method, with a predefined operator of "=".
     - [Where::greaterThan](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/greaterThan.md) &ndash; Proxy to the operator method, with a predefined operator of ">".
     - [Where::greaterThanOrEqualTo](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/Util/Where/greaterThanOrEqualTo.md) &ndash; Proxy to the operator method, with a predefined operator of ">=".

@@ -1,6 +1,6 @@
 SimplePdoWrapper
 ================
-2019-02-04 -> 2020-11-10
+2019-02-04 -> 2020-11-12
 
 
 
@@ -1055,6 +1055,10 @@ Related
 History Log
 ------------------
 
+- 1.30.12 -- 2020-11-12
+
+    - update Where, add merge method, add FetchAllComponentsHelper class 
+    
 - 1.30.11 -- 2020-11-10
 
     - update MysqlInfoUtil, add getPotentialTablePrefixes method 
