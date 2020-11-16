@@ -504,9 +504,12 @@ EEE;
 
 
     /**
-     * Returns an array of
+     * Returns an array of  foreignKey => [ referencedDb, referencedTable, referencedColumn ] for the given table.
      *
-     *  foreignKey => [ referencedDb, referencedTable, referencedColumn ]
+     * It's assumed that the given table exists.
+     *
+     *
+     *
      *
      * @param string $table
      * @return array
@@ -818,6 +821,31 @@ and CONSTRAINT_TYPE = 'FOREIGN KEY'
         return false;
     }
 
+
+    /**
+     * Returns whether the given table is considered a manyToMany table.
+     *
+     * We consider that a table is a manyToMany only if all the columns of its primary key are foreign keys.
+     * If there is no primary key at all, it's not a manyToMany table.
+     *
+     *
+     * @param string $table
+     * @return bool
+     */
+    public function isManyToManyTable(string $table): bool
+    {
+        $pk = $this->getPrimaryKey($table);
+        if ($pk) {
+            $fk = $this->getForeignKeysInfo($table);
+            foreach ($pk as $primary) {
+                if (false === array_key_exists($primary, $fk)) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        return false;
+    }
 
 
 
