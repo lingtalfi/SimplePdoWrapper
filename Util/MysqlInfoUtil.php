@@ -301,6 +301,24 @@ EEE;
         return $ric;
     }
 
+
+    /**
+     * Returns an array containing the name of all columns that are part of an unique index.
+     * @param string $table
+     * @return array
+     */
+    public function getUniqueIndexColumnsOnly(string $table): array
+    {
+        $ret = [];
+        $ukeys = $this->getUniqueIndexes($table);
+        foreach ($ukeys as $keys) {
+            $ret = array_merge($ret, $keys);
+        }
+        $ret = array_unique($ret);
+        return $ret;
+    }
+
+
     /**
      * Returns the array of unique indexes for the given table.
      * It's an array of indexName => indexes
@@ -501,6 +519,26 @@ EEE;
         }
         return false;
     }
+
+
+//    /**
+//     * Returns the name of the auto-incremented field, if it's also a primary key, or false otherwise.
+//     *
+//     * @param string $table
+//     * @return false|string
+//     * @throws \Exception
+//     */
+//    public function getAutoIncrementedPrimaryKey(string $table)
+//    {
+//        $ai = $this->getAutoIncrementedKey($table);
+//        if (false !== $ai) {
+//            $pkey = $this->getPrimaryKey($table);
+//            if (false === empty($pkey) && in_array($ai, $pkey, true)) {
+//                return $ai;
+//            }
+//        }
+//        return false;
+//    }
 
 
     /**

@@ -1055,6 +1055,10 @@ Related
 History Log
 ------------------
 
+- 1.30.14 -- 2020-11-16
+
+    - update MysqlInfoUtil, add getUniqueIndexColumnsOnly method 
+    
 - 1.30.13 -- 2020-11-16
 
     - update MysqlInfoUtil, add isManyToManyTable method 
