@@ -1,6 +1,6 @@
 SimplePdoWrapper
 ================
-2019-02-04 -> 2021-03-05
+2019-02-04 -> 2021-06-17
 
 
 
@@ -1060,6 +1060,10 @@ Related
 History Log
 ------------------
 
+- 1.30.19 -- 2021-06-17
+
+    - fix SimplePdoWrapper::addAssignmentListSubStmt not escaping all keys with backticks
+    
 - 1.30.18 -- 2021-05-31
 
     - Removing trailing plus in lpi-deps file (to work with Light_PlanetInstaller:2.0.0 api

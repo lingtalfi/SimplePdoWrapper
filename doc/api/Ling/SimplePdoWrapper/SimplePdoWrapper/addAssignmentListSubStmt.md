@@ -29,12 +29,12 @@ The string depends on the given $firstForm.
 
 - With firstForm = true, the string looks like this:
 
-         (a, b, c) VALUES (:a, :b, :c)
+         (`a`, `b`, `c`) VALUES (:a, :b, :c)
 
 
 - With firstForm = false, the string looks like this:
 
-         a=:a, b=:b, c=:c
+         `a`=:a, `b`=:b, `c`=:c
 
 
 

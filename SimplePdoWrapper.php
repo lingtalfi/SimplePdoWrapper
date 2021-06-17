@@ -543,12 +543,12 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
      *
      * - With firstForm = true, the string looks like this:
      *
-     *          (a, b, c) VALUES (:a, :b, :c)
+     *          (`a`, `b`, `c`) VALUES (:a, :b, :c)
      *
      *
      * - With firstForm = false, the string looks like this:
      *
-     *          a=:a, b=:b, c=:c
+     *          `a`=:a, `b`=:b, `c`=:c
      *
      *
      *
@@ -577,7 +577,7 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
             }
         } else {
             $first = true;
-            $stmt .= '(' . implode(', ', array_keys($fields)) . ') VALUES (';
+            $stmt .= '(`' . implode('`, `', array_keys($fields)) . '`) VALUES (';
             foreach ($fields as $k => $v) {
                 if (true === $first) {
                     $first = false;
