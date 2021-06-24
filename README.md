@@ -1,6 +1,6 @@
 SimplePdoWrapper
 ================
-2019-02-04 -> 2021-06-17
+2019-02-04 -> 2021-06-24
 
 
 
@@ -1060,6 +1060,10 @@ Related
 History Log
 ------------------
 
+- 1.30.20 -- 2021-06-24
+
+    - fix MysqlInfoUtil->getHasItems returning erroneous right handles
+    
 - 1.30.19 -- 2021-06-17
 
     - fix SimplePdoWrapper::addAssignmentListSubStmt not escaping all keys with backticks
