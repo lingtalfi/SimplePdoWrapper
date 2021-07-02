@@ -1,6 +1,6 @@
 SimplePdoWrapper
 ================
-2019-02-04 -> 2021-06-24
+2019-02-04 -> 2021-07-02
 
 
 
@@ -1060,6 +1060,10 @@ Related
 History Log
 ------------------
 
+- 1.30.21 -- 2021-07-02
+
+    - update SimplePdoWrapperInterface->fetch and fetchAll signatures
+    
 - 1.30.20 -- 2021-06-24
 
     - fix MysqlInfoUtil->getHasItems returning erroneous right handles

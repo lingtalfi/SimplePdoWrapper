@@ -153,7 +153,7 @@ interface SimplePdoWrapperInterface
      * @param null $fetchStyle
      * @return false|array
      */
-    public function fetch($query, array $markers = [], $fetchStyle = null);
+    public function fetch($query, array $markers = [], $fetchStyle = null): array|false;
 
     /**
      * Executes the prepared statement and return an array containing all of the result set rows.
@@ -173,7 +173,7 @@ interface SimplePdoWrapperInterface
      * @throws \PDOException
      * @throws NoPdoConnectionException
      */
-    public function fetchAll($query, array $markers = [], $fetchStyle = null, $fetchArg = null, array $ctorArgs = []);
+    public function fetchAll($query, array $markers = [], $fetchStyle = null, $fetchArg = null, array $ctorArgs = []): array;
 
 
     /**
