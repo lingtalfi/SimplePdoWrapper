@@ -422,21 +422,31 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
      * Adds the $whereConds to the given statement ($stmt), using the notation
      * defined in the comments of the SimplePdoWrapperInterface->update method.
      *
+     * Available options are:
+     * - whereKeyword: string=WHERE. Which keyword to use as where.
+     *         If your query already contains the "where" keyword, you might set this to "AND" for instance (or "OR").
+     *
      *
      *
      * @param $whereConds
      * @param $stmt
      * @param array $markers
+     * @param array $options
      * @throws \Exception
      */
-    public static function addWhereSubStmt(&$stmt, array &$markers, $whereConds)
+    public static function addWhereSubStmt(&$stmt, array &$markers, $whereConds, array $options = [])
     {
+        $whereKeyword = $options['whereKeyword'] ?? 'WHERE';
+        $whereKeyword = ' ' . $whereKeyword . ' ';
+
+
         if (is_array($whereConds)) {
             if ($whereConds) {
 
                 $mkCpt = 0;
                 $mk = 'spw_';
-                $stmt .= ' WHERE ';
+                $stmt .= $whereKeyword;
+
                 $first = true;
 
 
@@ -457,9 +467,10 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
                 }
             }
         } elseif (is_string($whereConds)) {
-            $stmt .= ' WHERE ' . $whereConds;
+            $stmt .= $whereKeyword;
+            $stmt .= $whereConds;
         } elseif ($whereConds instanceof Where) {
-            $stmt .= " WHERE (";
+            $stmt .= $whereKeyword . "  (";
             $whereConds->apply($stmt, $markers);
             $stmt .= " )";
         } else {

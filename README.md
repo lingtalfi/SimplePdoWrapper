@@ -1,6 +1,6 @@
 SimplePdoWrapper
 ================
-2019-02-04 -> 2021-07-02
+2019-02-04 -> 2021-07-22
 
 
 
@@ -1060,6 +1060,10 @@ Related
 History Log
 ------------------
 
+- 1.30.22 -- 2021-07-27
+
+    - update SimplePdoWrapper::addWhereSubStmt, now accepts whereKeyword option
+    
 - 1.30.21 -- 2021-07-02
 
     - update SimplePdoWrapperInterface->fetch and fetchAll signatures
