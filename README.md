@@ -1,6 +1,6 @@
 SimplePdoWrapper
 ================
-2019-02-04 -> 2021-07-22
+2019-02-04 -> 2021-07-27
 
 
 
@@ -1060,6 +1060,10 @@ Related
 History Log
 ------------------
 
+- 1.30.23 -- 2021-07-27
+
+    - update OrderBy, add addExpression method
+    
 - 1.30.22 -- 2021-07-27
 
     - update SimplePdoWrapper::addWhereSubStmt, now accepts whereKeyword option
