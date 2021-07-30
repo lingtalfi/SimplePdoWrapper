@@ -1,6 +1,6 @@
 SimplePdoWrapper
 ================
-2019-02-04 -> 2021-07-27
+2019-02-04 -> 2021-07-30
 
 
 
@@ -1059,6 +1059,10 @@ Related
 
 History Log
 ------------------
+
+- 1.30.24 -- 2021-07-30
+
+    - fix SimplePdoWrapperInterface->fetch not taking into account string returned
 
 - 1.30.23 -- 2021-07-27
 

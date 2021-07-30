@@ -4,7 +4,7 @@
 
 The SimplePdoWrapperQueryException class
 ================
-2019-07-22 --> 2021-07-27
+2019-07-22 --> 2021-07-30
 
 
 
