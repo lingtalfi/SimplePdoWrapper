@@ -1060,6 +1060,10 @@ Related
 History Log
 ------------------
 
+- 1.32.0 -- 2021-08-05
+
+    - update SimplePdoWrapperInterface->fetch, now returns false instead of null
+  
 - 1.31.0 -- 2021-08-05
 
     - update SimplePdoWrapperInterface->fetch, now returns null instead of false, fetchAll always returns an array

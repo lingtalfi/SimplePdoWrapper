@@ -7,7 +7,7 @@ SimplePdoWrapper::fetchAll
 
 
 
-SimplePdoWrapper::fetchAll — Executes the prepared statement and return an array containing all the result set rows.
+SimplePdoWrapper::fetchAll — Executes the prepared statement and return an array containing all of the result set rows.
 
 
 
@@ -21,7 +21,7 @@ public [SimplePdoWrapper::fetchAll](https://github.com/lingtalfi/SimplePdoWrappe
 
 
 
-Executes the prepared statement and return an array containing all the result set rows.
+Executes the prepared statement and return an array containing all of the result set rows.
 
 The default fetch style is PDO::FETCH_ASSOC.
 

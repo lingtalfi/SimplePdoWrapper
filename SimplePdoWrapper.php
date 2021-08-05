@@ -322,7 +322,7 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
     /**
      * @implementation
      */
-    public function fetch($query, array $markers = [], $fetchStyle = null): array|string|null
+    public function fetch($query, array $markers = [], $fetchStyle = null): array|string|false
     {
         $fetchStyle = $fetchStyle ?? self::$defaultFetchStyle;
 
@@ -348,7 +348,7 @@ class SimplePdoWrapper implements SimplePdoWrapperInterface
         if (true === $res) {
             return $stmt->fetch($fetchStyle);
         }
-        return null;
+        return false;
     }
 
 

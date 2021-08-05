@@ -7,7 +7,7 @@ SimplePdoWrapperInterface::fetch
 
 
 
-SimplePdoWrapperInterface::fetch — Executes the prepared statement and returns the fetched row, or null in case of failure.
+SimplePdoWrapperInterface::fetch — Executes the prepared statement and returns the fetched row, or false in case of failure.
 
 
 
@@ -16,12 +16,12 @@ Description
 ================
 
 
-abstract public [SimplePdoWrapperInterface::fetch](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapperInterface/fetch.md)($query, ?array $markers = [], ?$fetchStyle = null) : array | string | null
+abstract public [SimplePdoWrapperInterface::fetch](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapperInterface/fetch.md)($query, ?array $markers = [], ?$fetchStyle = null) : array | string | false
 
 
 
 
-Executes the prepared statement and returns the fetched row, or null in case of failure.
+Executes the prepared statement and returns the fetched row, or false in case of failure.
 
 Note: strings can be returned if you use fetch styles such as \PDO::FETCH_COLUMN.
 
@@ -48,7 +48,7 @@ Parameters
 Return values
 ================
 
-Returns array | string | null.
+Returns array | string | false.
 
 
 
