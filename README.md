@@ -1,6 +1,6 @@
 SimplePdoWrapper
 ================
-2019-02-04 -> 2021-07-30
+2019-02-04 -> 2021-08-05
 
 
 
@@ -1060,6 +1060,10 @@ Related
 History Log
 ------------------
 
+- 1.31.0 -- 2021-08-05
+
+    - update SimplePdoWrapperInterface->fetch, now returns null instead of false, fetchAll always returns an array
+  
 - 1.30.24 -- 2021-07-30
 
     - fix SimplePdoWrapperInterface->fetch not taking into account string returned

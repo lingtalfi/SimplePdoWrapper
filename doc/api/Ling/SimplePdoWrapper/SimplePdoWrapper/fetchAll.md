@@ -7,7 +7,7 @@ SimplePdoWrapper::fetchAll
 
 
 
-SimplePdoWrapper::fetchAll — Executes the prepared statement and return an array containing all of the result set rows.
+SimplePdoWrapper::fetchAll — Executes the prepared statement and return an array containing all the result set rows.
 
 
 
@@ -16,12 +16,12 @@ Description
 ================
 
 
-public [SimplePdoWrapper::fetchAll](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapper/fetchAll.md)($query, ?array $markers = [], ?$fetchStyle = null, ?$fetchArg = null, ?array $ctorArgs = []) : false | array
+public [SimplePdoWrapper::fetchAll](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapper/fetchAll.md)($query, ?array $markers = [], ?$fetchStyle = null, ?$fetchArg = null, ?array $ctorArgs = []) : array
 
 
 
 
-Executes the prepared statement and return an array containing all of the result set rows.
+Executes the prepared statement and return an array containing all the result set rows.
 
 The default fetch style is PDO::FETCH_ASSOC.
 
@@ -59,7 +59,7 @@ Parameters
 Return values
 ================
 
-Returns false | array.
+Returns array.
 
 
 Exceptions thrown

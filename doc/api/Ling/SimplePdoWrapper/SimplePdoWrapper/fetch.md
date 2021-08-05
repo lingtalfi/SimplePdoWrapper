@@ -7,7 +7,7 @@ SimplePdoWrapper::fetch
 
 
 
-SimplePdoWrapper::fetch — Executes the prepared statement and returns the fetched row, or false in case of failure.
+SimplePdoWrapper::fetch — Executes the prepared statement and returns the fetched row, or null in case of failure.
 
 
 
@@ -16,12 +16,12 @@ Description
 ================
 
 
-public [SimplePdoWrapper::fetch](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapper/fetch.md)($query, ?array $markers = [], ?$fetchStyle = null) : array | string | false
+public [SimplePdoWrapper::fetch](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapper/fetch.md)($query, ?array $markers = [], ?$fetchStyle = null) : array | string | null
 
 
 
 
-Executes the prepared statement and returns the fetched row, or false in case of failure.
+Executes the prepared statement and returns the fetched row, or null in case of failure.
 
 Note: strings can be returned if you use fetch styles such as \PDO::FETCH_COLUMN.
 
@@ -48,7 +48,7 @@ Parameters
 Return values
 ================
 
-Returns array | string | false.
+Returns array | string | null.
 
 
 
